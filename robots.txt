@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /walkthroughs/
+
+Sitemap: https://www.webology.me/sitemap.xml

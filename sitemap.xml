@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Top-level pages -->
+    <url>
+        <loc>https://www.webology.me/</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/work.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/bio-resume.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/leadership.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/perspective.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/contact.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Essays -->
+    <url>
+        <loc>https://www.webology.me/ai-principles.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/platform-shift.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Fully public case studies (no gating) -->
+    <url>
+        <loc>https://www.webology.me/visa-design.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/blue-shield-design.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/att-design.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/bank-analyst-portal.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/commercial-banking-platform.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/optera-climate.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Walkthrough stubs (public marketing pages; full content is gated and excluded via robots.txt) -->
+    <url>
+        <loc>https://www.webology.me/paciolan-design.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/onetrust-privacy.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.webology.me/onetrust-esg.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Secondary -->
+    <url>
+        <loc>https://www.webology.me/whereisthework.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <priority>0.4</priority>
+    </url>
+</urlset>

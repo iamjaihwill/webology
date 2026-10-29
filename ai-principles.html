@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The three questions I make every AI feature answer | Tommy Williams</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta property="og:site_name" content="Tommy Williams" />
+    <meta property="og:title" content="The three questions I make every AI feature answer before it ships" />
+    <meta property="og:url" content="https://www.webology.me/ai-principles.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="The three operating principles I direct AI product work by at Paciolan — useful, grounded, and reversible — and what design leadership owes its team during the shift to AI-touched product." />
+    <meta name="description" content="The three operating principles I direct AI product work by at Paciolan — useful, grounded, and reversible — and what design leadership owes its team during the shift to AI-touched product." />
+    <link rel="canonical" href="https://www.webology.me/ai-principles.html">
+    <meta property="og:image" content="https://www.webology.me/images/og-default.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The three questions I make every AI feature answer before it ships">
+    <meta name="twitter:image" content="https://www.webology.me/images/og-default.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css?v=25" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap" rel="stylesheet" />
+    <!-- Cookie consent + Google Analytics 4 (deferred until consent) -->
+    <script src="js/consent.js?v=1" defer></script>
+    <style>
+        .essay-wrapper { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+        .essay-meta { font-family: 'Inter', system-ui, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #FF9900; margin-bottom: 16px; }
+        .essay-meta span { color: #828891; font-weight: 500; margin-left: 12px; letter-spacing: 0.12em; }
+        .essay-body h2 { font-family: 'Inter', system-ui, sans-serif; font-size: 28px; line-height: 36px; font-weight: 700; color: #111418; letter-spacing: -0.01em; margin: 48px 0 16px; }
+        .essay-body h2:first-child { margin-top: 0; }
+        @media (min-width: 992px) {
+            .essay-body h2 { font-size: 32px; line-height: 44px; }
+        }
+        .essay-body p { margin-bottom: 24px; }
+        .essay-body em { font-style: italic; color: #111418; font-weight: 500; }
+        .essay-lede { font-family: 'Inter', system-ui, sans-serif; font-size: 20px !important; line-height: 32px !important; color: #111418 !important; font-weight: 400; margin-bottom: 32px !important; }
+        @media (min-width: 992px) {
+            .essay-lede { font-size: 22px !important; line-height: 34px !important; }
+        }
+        .essay-pull { border-left: 4px solid #FF9900; padding: 4px 0 4px 24px; margin: 32px 0; font-size: 18px !important; line-height: 28px !important; color: #111418 !important; font-weight: 500; }
+        .essay-back { display: inline-flex; align-items: center; gap: 8px; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 500; color: #5A5F66 !important; text-decoration: none !important; border: none !important; padding-bottom: 0 !important; transition: color .24s cubic-bezier(0, 0, 0, 1.16); margin-bottom: 32px; }
+        .essay-back:hover { color: #FF9900 !important; border: none !important; }
+        .essay-back::before { content: '←'; font-size: 18px; }
+    </style>
+</head>
+<body class="michel-themed">
+        <!-- Back to top button -->
+        <a id="buttonScrollToTop" class="">
+            <span class="label">Return to Top</span>
+        </a>
+    <nav class="navigation-bar">
+        <div class="nav-wrapper">
+            <a class="logo-name" href="home.html">Tommy Williams</a>
+            <ul class="nav-link">
+                <li><a href="work.html">WORK</a></li>
+                <li><a href="bio-resume.html">ABOUT</a></li>
+                <li><a href="leadership.html">LEADERSHIP</a></li>
+                <li><a href="perspective.html" class="selected">PERSPECTIVE</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <div class="nav-socials">
+                <a href="mailto:webology@me.com?subject=Hello" aria-label="Email">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.0756 0.820987L0.955508 5.99977C0.338597 6.24328 0.336803 7.11588 0.952693 7.36808L5.5018 8.97413L12.6343 3.2067L6.86064 10.333L8.48833 14.9037C8.74053 15.5196 9.61313 15.5178 9.85664 14.9009L15.0354 1.78078C15.2723 1.18056 14.6759 0.584066 14.0756 0.820987Z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/iamtommyw" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.58143 16H0.264286V5.31762H3.58143V16ZM1.92107 3.86044C0.860357 3.86044 0 2.98185 0 1.92111C0 1.4116 0.202398 0.92296 0.562669 0.562681C0.92294 0.202403 1.41157 0 1.92107 0C2.43057 0 2.9192 0.202403 3.27947 0.562681C3.63974 0.92296 3.84214 1.4116 3.84214 1.92111C3.84214 2.98185 2.98143 3.86044 1.92107 3.86044ZM15.9964 16H12.6864V10.7999C12.6864 9.56057 12.6614 7.97125 10.9618 7.97125C9.23714 7.97125 8.97286 9.31771 8.97286 10.7106V16H5.65929V5.31762H8.84071V6.77479H8.88714C9.33 5.93549 10.4118 5.04976 12.0257 5.04976C15.3829 5.04976 16 7.26052 16 10.132V16H15.9964Z"/></svg>
+                </a>
+            </div>
+            <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <ul class="mobile-menu">
+                    <li><a href="work.html">WORK</a></li>
+                    <li><a href="bio-resume.html">ABOUT</a></li>
+                    <li><a href="leadership.html">LEADERSHIP</a></li>
+                    <li><a href="perspective.html" class="selected">PERSPECTIVE</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="page-content">
+
+        <article class="essay-wrapper" style="padding-top: 32px; padding-bottom: 80px;">
+            <a href="perspective.html" class="essay-back">Back to Perspective</a>
+
+            <p class="essay-meta">Essay <span>10&ndash;minute read &middot; May 2026</span></p>
+
+            <section class="page-hero" style="padding: 0 0 32px !important; margin: 0 !important;">
+                <h1 style="max-width:none;">The three questions I make every AI feature answer before it ships</h1>
+            </section>
+
+            <div class="essay-body">
+                <p class="essay-lede">A few months into our AI work at Paciolan, we got close to shipping something I'm grateful we didn't.</p>
+
+                <p>It was an intelligent recommendation surface &mdash; the kind of feature you'd happily put on a deck and a customer success call and feel good about. In the demo, with curated data, it really was good. Confident, contextually aware, the kind of output that makes everyone in the room lean forward a little. I was leaning forward.</p>
+
+                <p>Then one of our engineering leads asked a question I should have been asking weeks earlier: <em>what does this look like when the fan only has two prior interactions, neither of which is recent?</em></p>
+
+                <p>The answer, when we actually ran it, was: it makes things up.</p>
+
+                <p>Not in the obvious hallucinatory way. The model didn't invent games that didn't exist. It just confidently inferred preferences from data that couldn't support the inference, and surfaced recommendations the fan would correctly read as irrelevant or, on the worst days, a little creepy. The damage wasn't a wrong answer. It was losing trust in the recommendation system itself &mdash; and not just this one. The next thing we built would have to climb out of the same hole.</p>
+
+                <p>We didn't ship it. We pulled it apart, re-scoped it, slowed down. And while we did, I wrote down three questions I now ask of every AI feature before it goes near a real user. <em>Useful, grounded, reversible.</em> They're the operating principles I work with my team by, and honestly, they're as much for me as for anyone else. I've watched myself almost ship things that would have failed all three.</p>
+
+                <h2>1. Is it useful?</h2>
+
+                <p>This is the simplest of the three, and the one I most often catch myself skipping. AI is exceptional at producing capability. It's not, in my experience, very good at producing relevance &mdash; and those are not the same thing.</p>
+
+                <p>The temptation when you have a powerful model in front of you is to ask <em>what could this do?</em> I've sat in those sprints. I've gotten genuinely excited about answers that, looking back, were elaborate solutions to problems no one actually had. The harder question &mdash; the one I keep dragging the team back to &mdash; is the same one I'd ask of any design decision: <em>what specific problem does this solve for the actual person using the product?</em></p>
+
+                <p>In the case I mentioned above, the recommendation surface was answering a problem fans weren't telling us they had. They weren't telling us they didn't know what to watch. They were telling us they couldn't quickly find the thing they already knew they wanted. The model was generating sophisticated answers to a question the user wasn't asking.</p>
+
+                <p>I think about it this way now: AI features that don't solve a real, observed problem in someone's actual workflow aren't design wins. They're tech debt with better marketing. And the cost of carrying that debt shows up months later, when you're trying to ship something that would have been genuinely useful and you have to fight for the attention you already spent on the thing that wasn't.</p>
+
+                <p class="essay-pull">The harder question is the same one I'd ask of any design decision: what specific problem does this solve for the actual person using the product?</p>
+
+                <h2>2. Is it grounded?</h2>
+
+                <p>This is the principle that took me the longest to learn and the one I see teams miss most often.</p>
+
+                <p>A grounded AI output is anchored in something the user can trust and, ideally, inspect. When the system tells them something, they can trace why. When it surfaces a recommendation, it maps back to something they actually did, or something a similar user did, or something the team they follow actually scheduled. Even if the user never looks at the explanation, <em>the fact that it exists</em> &mdash; and that they could look &mdash; changes the relationship.</p>
+
+                <p>Ungrounded output is the opposite. It's plausible-sounding inference floating free of the underlying truth. It's confident. It's well-formatted. And when it's wrong, the user can't recover trust, because they have no way to understand where the error came from.</p>
+
+                <p>The line I keep using with my team: the cost of an ungrounded wrong answer isn't the wrong answer. It's the next ten right answers the user doesn't believe.</p>
+
+                <p>We've gotten more rigorous about this in the last year. We design with grounding as a first-class affordance now, not an engineering footnote. When the system surfaces a recommendation, we show <em>why</em> &mdash; and we design the explanation alongside the recommendation, not as something we'll layer on later. If we can't explain a recommendation to a user in language they understand, we treat that as a signal not to ship it yet. We don't always hold that line perfectly. But we're a lot closer than we were.</p>
+
+                <h2>3. Is it reversible?</h2>
+
+                <p>The third question is the one I weight most heavily for any feature that takes action on the user's behalf.</p>
+
+                <p>A reversible feature lets the user say <em>no, undo, do something different</em> cheaply, obviously, and without consequence. An irreversible feature cascades the model's output into other systems before the user has a real chance to correct it.</p>
+
+                <p>In ticketing, this matters more than in most product domains. The systems we touch carry fan transactions, club inventory, partner integrations, financial reconciliation. An AI-generated pricing recommendation that quietly flows through three downstream systems before a human sees it isn't really a feature. It's a small liability waiting to find a big one.</p>
+
+                <p>This is where I'll admit I had to change my own mind. Earlier in my career I'd have called a reversibility requirement defensive &mdash; the kind of constraint that slows the work down. I don't think that anymore. Reversibility is what <em>lets</em> us ship aggressive AI capability without paying the trust cost.</p>
+
+                <p class="essay-pull">A user who can always unwind an AI decision trusts the system more, not less. A user who can never unwind one will distrust it after the first error &mdash; and there will be a first error.</p>
+
+                <p>The question isn't whether the model will be wrong sometimes. It's whether the user can correct the system gracefully when it is. Practically, this has reshaped the order in which my team builds. We design the rollback before the recommendation. We design the override before the automation. We design the &ldquo;I disagree, do this instead&rdquo; affordance before the suggestion itself. None of that is glamorous on a roadmap. All of it is what makes the glamorous parts safe to ship.</p>
+
+                <h2>What this looks like in practice</h2>
+
+                <p>Useful, grounded, reversible isn't a checklist we tick at the end of a design review. By the time we're at a review, it's too late &mdash; we've already invested in the thing. So we try to frame the work in this order from the first sprint.</p>
+
+                <p>Before we draft a screen, we have to articulate the user problem we're solving and the workflow we're improving. <em>(Useful.)</em> Before we wire the model in, we have to know what data the recommendation is grounded in and how the user will see that grounding. <em>(Grounded.)</em> Before we ship to production, we have to have designed the path that lets the user disagree with the system and keep going. <em>(Reversible.)</em></p>
+
+                <p>When we get all three right, the AI tends to feel invisible. The user gets a faster, sharper, more confident workflow without ever having to think about the model underneath. When we miss any one of the three, the AI becomes the feature &mdash; and in my experience, that's almost always a bad outcome.</p>
+
+                <p>I want to be honest: we don't get all three right every time. The deadlines are real. The competitive pressure is real. The temptation to ship the demo as the product is real. What I've found is that having the questions written down, and asking them out loud in the room, is the difference between catching the mistake early and discovering it after someone we care about has already been let down by it.</p>
+
+                <h2>What design leadership owes its team right now</h2>
+
+                <p>I'll close with the bigger thing this work has been teaching me.</p>
+
+                <p>The premium in design used to sit closer to the craft side: how well can you compose an interface, how cleanly can you specify a system, how durable is the design system you ship. That premium is shifting. As AI compresses the time between idea and artifact, the durable skill is no longer execution. It's judgment about what should exist in the first place &mdash; and whether the answer the system is offering is one the user can trust.</p>
+
+                <p>I don't think the job of a design leader in this environment is to learn the new tools faster than the team. I'd argue it's the opposite. Our job is to protect the team's judgment about which questions are worth asking, while the rest of the industry rushes to answer the easy ones.</p>
+
+                <p>AI is exceptional at producing answers. What it still lacks &mdash; and what I haven't seen it acquire &mdash; is discernment. Knowing which questions are actually worth asking in the first place. That remains deeply human work. And in many ways, it's the real work of design.</p>
+
+                <p>I keep this list on a sticky note above my monitor. <em>Useful, grounded, reversible.</em> It hasn't stopped us from making mistakes. It's just made the mistakes smaller, and easier to recover from. For now, I'll take that.</p>
+            </div>
+
+            <!-- Footer / CTA -->
+            <div class="cs-outcome" style="margin-top: 80px;">
+                <h3>Want to talk about this?</h3>
+                <p style="margin-bottom: 28px;">If you're working through similar questions on your team &mdash; or hiring a design leader who has &mdash; I'd love to hear from you.</p>
+                <div class="cs-links" style="margin-bottom: 0;">
+                    <a href="contact.html">Get in touch</a>
+                    <a href="perspective.html">More from Perspective</a>
+                </div>
+            </div>
+
+        </article>
+
+    </div>
+    <section class="footer-wrapper">
+        &copy; 2026 Tommy Williams
+    </section>
+    <script src="js/app.js?v=3"></script>
+</body>
+</html>
