@@ -1,0 +1,4805 @@
+html {
+    scroll-padding-top: 80px;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    color: #333;
+}
+
+/* Prevent horizontal scrollbar from full-bleed negative margins */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    line-height: 1;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    background-color: #222;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Editorial serif for sentence-case content headings.
+   Letterspaced uppercase labels keep Inter via inheritance. */
+.page-hero h1,
+.cs-hero h1,
+.cs-heading,
+.work-content h3,
+.work-card h3,
+.case-study-hero h3,
+.cs-related-card h3,
+.pull-quote,
+.currently h2,
+.nda-close h3,
+.cs-outcome h3 {
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-feature-settings: 'ss01', 'ss02';
+}
+
+/* Override the uppercase letter-spacing on .currently h2 since it now uses serif */
+.currently h2 {
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    color: #EA7457;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #333;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+.page-content {
+    max-width: 1062px;
+    padding: 85px 168px 0 168px;
+    margin: auto;
+    background-color: #fff;
+    padding-bottom: 70px;
+    position: relative;
+}
+
+/* When a page-hero or cs-hero is the first element, remove top padding */
+.page-content > .page-hero:first-child,
+.page-content > .cs-hero:first-child {
+    margin-top: -85px;
+}
+
+.navigation-bar {
+    position: sticky;
+    background: #222;
+    padding-bottom: 17px;
+    padding-top: 17px;
+    top: 0;
+    max-width: 1420px;
+    margin: auto;
+    z-index: 20;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: auto; */
+    padding: 0px 190px 0 168px;
+}
+
+.navigation-bar .logo-name {
+    display: flex;
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 28px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    display: flex;
+    font-weight: 400;
+}
+
+.nav-link li {
+    margin-right: 27px;
+}
+
+.nav-link li:last-child {
+    margin-right: 47px;
+}
+
+.nav-link li a {
+    font-size: 12px;
+    letter-spacing: 2.4px;
+    color: #fff;
+    transition: color 0.2s ease;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #EA7457;
+    transition: width 0.3s ease;
+}
+
+.nav-link li a:hover::after,
+.nav-link li a.selected::after {
+    width: 100%;
+}
+
+.nav-link li a:hover {
+    color: #EA7457;
+}
+
+.nav-link li a.selected {
+    color: #fff;
+    font-weight: 600;
+}
+
+.banner-wrapper {
+    display: flex;
+    border-bottom: 1px solid #BBBBBB;
+    max-width: 1054px;
+    margin: auto;
+    margin-top: 0;
+}
+
+.banner-wrapper h1.home-page-title {
+    font-size: 56px;
+    font-weight: 400;
+    color: #333;
+    line-height: 56.25px;
+    letter-spacing: 0.56px;
+    flex-basis: 100%;
+}
+
+.banner-wrapper h1.home-page-title .tag {
+}
+
+.banner-wrapper h1.home-page-title .tag.tag-line-1 {
+    margin-bottom: 36px;
+}
+
+.banner-wrapper h1.home-page-title .tag.tag-line-2 {
+    margin-bottom: 76px;
+    width: 100%;
+}
+
+.skills-wrapper {
+    display: flex;
+    margin-top: 41px;
+}
+
+.skills-wrapper .skills-wrapper-list {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.skills-wrapper .skills-wrapper-list li {
+    flex-basis: 45%;
+    margin-bottom: 25px;
+    padding-right: 38px;
+}
+
+.skills-wrapper .skills-wrapper-list li h2 {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 2.34px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.skills-wrapper .skills-wrapper-list li p {
+    line-height: 24px;
+    letter-spacing: 0.16px;
+}
+
+.skills-wrapper .skills-wrapper-list li p>strong {
+    font-weight: 500;
+}
+
+.brand-wrapper {
+    flex-direction: column;
+    display: flex;
+    margin-top: 23px;
+    align-items: center;
+    border-top: 1px solid #BBBBBB;
+    padding-top: 41px;
+}
+
+.is-mobile {
+    display: none;
+}
+
+.is-desktop {
+    display: flex;
+}
+
+.brand-wrapper h2 {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18.2px;
+    letter-spacing: 2.34px;
+    margin-bottom: 14px;
+}
+
+.brand-wrapper p {
+    line-height: 28.5px;
+    letter-spacing: 0.19px;
+    font-size: 16px;
+}
+
+.brand-wrapper ul {
+    display: flex;
+    list-style: none;
+    margin-top: 11px;
+}
+
+.brand-wrapper ul li {
+    margin-right: 14px;
+}
+
+.brand-wrapper ul li img {
+    width: 102px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.brand-wrapper ul li img:hover {
+    opacity: 1;
+}
+
+q {
+    width: 108px;
+}
+
+.work-wrapper {
+    margin-top: 41px;
+    border-top: 1px solid #BBBBBB;
+    padding-top: 41px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.work-wrapper h2 {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18.2px;
+    letter-spacing: 2.34px;
+    margin-bottom: 36px;
+}
+
+.work-wrapper .work-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.work-wrapper li {
+    display: flex;
+    position: relative;
+    margin-bottom: 34px;
+    width: 100%;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.work-wrapper li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(26, 24, 22, 0.10);
+}
+
+.work-wrapper li.left {
+}
+
+.work-wrapper li.right {
+    flex-direction: row-reverse;
+}
+
+.work-wrapper li .work-image {
+    min-width: 540px;
+    height: 675.24px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.work-wrapper li .work-content {
+    /* transform: translateX(-122px); */
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+    padding: 48px 82px 28px 48px;
+    position: relative;
+    /* max-width: 557px; */
+    top: 80px;
+    z-index: 1;
+}
+
+.work-wrapper li.left .work-content {
+    margin-left: -108px;
+}
+
+.work-wrapper li.left.atnt .work-content {
+    top: 54px;
+}
+
+.work-wrapper li.right .work-content {
+    margin-right: -108px;
+    top: 54px;
+}
+
+.work-wrapper li .work-image.blue-shield-img {
+    background-image: url('../images/BCBS_titlepage.png');
+}
+
+.work-wrapper li .work-image.visa-employee-img {
+    background-image: url('../images/visa_tl 1.png');
+}
+
+.work-wrapper li .work-image.atnt-img {
+    background-image: url('../images/image 1.png');
+}
+
+.work-wrapper li .work-image.onetrust-privacy-img {
+    background-image: url('../images/onetrust-privacy-hero.png');
+    background-color: #4ade80;
+    background-position: center;
+}
+
+.work-wrapper li .work-content h3 {
+    font-weight: 300;
+    font-size: 21px;
+    margin-bottom: 26px;
+    line-height: 26.4px;
+}
+
+.work-wrapper li .work-content p {
+    line-height: 24px;
+    letter-spacing: 0.16px;
+}
+
+.work-wrapper li .work-content a {
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    display: inline-block;
+    font-weight: 500;
+    color: #EA7457;
+}
+
+.work-wrapper li .work-content .link-wrapper {
+    margin-top: 24px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.work-wrapper li .work-content a:hover {
+    color: #333;
+}
+
+.chat-wrapper {
+    border-top: 1px solid #BBBBBB;
+    margin-top: 30px;
+    padding-top: 41px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chat-wrapper h2 {
+    font-size: 13px;
+    line-height: 18.2px;
+    letter-spacing: 2.34px;
+    margin-bottom: 23px;
+}
+
+.chat-wrapper p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+}
+
+.chat-wrapper a {
+    color: #EA7457;
+}
+
+.chat-wrapper a:hover {
+    color: #333;
+}
+
+.chat-wrapper .quote-content strong {
+    font-weight: 600;
+    display: block;
+}
+
+.chat-wrapper .quote-content {
+    text-align: center;
+    margin-top: 29px;
+}
+
+.footer-wrapper {
+    color: #fff;
+    display: flex;
+    min-height: 69px;
+    align-items: center;
+    background-color: #222;
+    justify-content: center;
+}
+
+.quote-content {
+    padding-top: 24px;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    text-align: center;
+    margin-top: 62px;
+    border-top: 1px solid #BBBBBB;
+    padding-bottom: 36px;
+}
+
+.profile-banner {
+    display: flex;
+}
+
+.profile-img {
+    background-color: #1a1816;
+    background-image: none;
+    min-width: 280px;
+    width: 280px;
+    height: 360px;
+    margin: 10px 32px 10px 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-img::before {
+    content: 'T';
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 200px;
+    font-weight: 600;
+    color: #fbbf24;
+    line-height: 1;
+}
+
+.profile-img::after {
+    content: 'TOMMY WILLIAMS';
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(248, 245, 240, 0.7);
+    letter-spacing: 0.24em;
+    white-space: nowrap;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 0;
+}
+
+.profile-content h1 {
+    font-size: 18px;
+    line-height: 28.5px;
+    letter-spacing: 0.19px;
+    font-weight: 400;
+    margin-bottom: 27px;
+}
+
+.profile-content p {
+    font-size: 16px;
+    line-height: 28px;
+    /* or 178% */
+    letter-spacing: 0.19px;
+}
+
+.margin-bottom {
+    margin-bottom: 27px;
+}
+
+.teams-wrapper {
+    display: flex;
+    margin-top: 41px;
+    flex-direction: column;
+}
+
+.teams-wrapper h2 {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    /* identical to box height, or 140% */
+    letter-spacing: 2.34px;
+    text-transform: uppercase;
+}
+
+.leadership-wrapper {
+    display: flex;
+    margin-top: 41px;
+    flex-direction: column;
+}
+
+.leadership-wrapper h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23.4px;
+    letter-spacing: 2.6px;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.leadership-wrapper h3 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23.4px;
+    /* identical to box height, or 140% */
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.leadership-wrapper p {
+    font-weight: 400;
+    line-height: 28.8px;
+    font-size: 14px;
+}
+
+.leadership-wrapper p.spacer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.my-core-leadership-value-wrapper {
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column;
+}
+
+.my-core-leadership-value-wrapper h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23.4px;
+    letter-spacing: 2.6px;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.my-core-leadership-value-wrapper p {
+    font-weight: 400;
+    line-height: 28.8px;
+    font-size: 14px;
+}
+
+.values-wrapper {
+    display: flex;
+    margin-top: 55px;
+    flex-direction: column;
+    padding-bottom: 73px;
+}
+
+.values-wrapper hr {
+    border-top: 1px solid #BBBBBB;
+    margin: 30px 0 40px 0;
+}
+
+.values-wrapper h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 2.34px;
+    margin-bottom: 26px;
+}
+
+ul.value-container {
+    display: flex;
+    margin: 0 -15px 0 -15px;
+}
+
+ul.value-container li {
+    list-style: none;
+    min-width: 216px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+ul.value-container li h3 {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 2.34px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #646464;
+}
+
+ul.value-container li p {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+}
+
+.teams-wrapper .teams-logo {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 60px;
+}
+
+.teams-wrapper .teams-logo li {
+    padding: 1px;
+    margin-top: -65px;
+}
+
+.teams-wrapper .teams-logo li img {
+    width: 162px;
+    /* height: 162px; */
+}
+
+.connect-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.connect-btn-wrapper .btn {
+    border: 0.5px solid #000000;
+    background: #FFFDFD;
+    color: #333333;
+    line-height: 18px;
+    letter-spacing: 2.34px;
+    padding: 17px 12px;
+    outline: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.connect-btn-wrapper .btn:hover {
+    background: #000000;
+    color: #FFFDFD;
+}
+
+.work-exp-wrapper {
+    border-top: 1px solid #BBBBBB;
+    padding-top: 31px;
+}
+
+.work-exp-wrapper h2 {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    /* identical to box height, or 140% */
+    letter-spacing: 2.34px;
+    margin-bottom: 24px;
+}
+
+.work-exp-wrapper .details {
+    line-height: 24px;
+    /* or 171% */
+    letter-spacing: 0.16px;
+}
+
+.work-exp-wrapper dl {
+    display: flex;
+    margin-bottom: 64px;
+    flex-wrap: wrap;
+}
+
+.work-exp-wrapper dl.margin-bottom {
+    margin-bottom: 30px;
+}
+
+.work-exp-wrapper dt {
+    min-width: 177px;
+    margin-right: 81px;
+    padding: 10px 10px 10px 1px;
+}
+
+.work-exp-wrapper.volunteer dt {
+    max-width: 141px;
+    margin-right: 51px;
+    min-width: unset;
+}
+
+.work-exp-wrapper.education dt {
+    max-width: 423px;
+    margin-right: 115px;
+    min-width: unset;
+}
+
+.work-exp-wrapper dd {
+    line-height: 24px;
+    /* or 171% */
+    letter-spacing: 0.16px;
+    padding: 10px;
+}
+
+.no-wrap {
+    flex-wrap: nowrap !important;
+}
+
+.case-study-banner {
+    background-image: url('../images/case-study-header.png');
+    width: 100%;
+    max-width: 1054px;
+    height: 696px;
+    background-size: cover;
+    background-position: center;
+}
+
+.case-study-banner-visa {
+    background-image: url('../images/1-Visa-Cover.png');
+    width: 100%;
+    max-width: 1054px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.case-study-banner-att {
+    background-image: url('../images/21-ATT-cover_1.png');
+    width: 100%;
+    max-width: 1054px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.case-study-wrapper {
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.case-study-wrapper h2 {
+    font-weight: 600;
+    font-size: 16px;
+    /* line-height: 23px; */
+    /* identical to box height, or 146% */
+    text-align: center;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    margin-bottom: 34px;
+}
+
+.case-study-wrapper .heading-large {
+    font-size: 32px;
+}
+
+.case-study-wrapper p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 29px;
+    max-width: 779px;
+}
+
+.case-study-wrapper .link-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+}
+
+.margin-bottom-100px {
+    margin-bottom: 100px !important;
+}
+
+.margin-bottom-34px {
+    margin-bottom: 34px
+}
+
+.case-study-wrapper .case-study-img {
+    text-align: center;
+}
+
+.case-study-wrapper .case-study-img img {
+    width: 100%;
+}
+
+.contact-wrapper {
+    max-width: 709px;
+    margin: 70px auto 125px auto;
+}
+
+.contact-wrapper h2 {
+    /* identical to box height, or 140% */
+    margin-bottom: 20px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    /* identical to box height, or 140% */
+    letter-spacing: 2.34px;
+    text-transform: uppercase;
+}
+
+.contact-wrapper form {
+}
+
+.contact-wrapper .contact-wrapper-content {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* or 171% */
+    letter-spacing: 0.16px;
+    color: #333333;
+    margin-bottom: 35px;
+}
+
+.label-s-text {
+    margin-bottom: 8px;
+}
+
+.input-container {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+.input-container.error input, .input-container.error select {
+    border-color: #a94442
+}
+
+input.form-control, select.form-control, textarea.form-control {
+    background: #FAFAFA;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    min-height: 40px;
+    padding: 6px 12px;
+    transition: border-color 0.2s ease, outline-color 0.2s ease;
+}
+
+textarea.form-control {
+    min-height: 100px;
+}
+
+.form-control:focus {
+    border: 1px solid #EA7457;
+    outline: 1px solid #EA7457;
+}
+
+label {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.16px;
+    color: #333333;
+}
+
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.two-col .input-container {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.two-col .form-control {
+    flex-basis: 100%;
+}
+
+.input-label {
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    letter-spacing: 0.16px;
+}
+
+.btn-container {
+}
+
+button.btn {
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 2.66px;
+    padding: 12px 30px 13px 30px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button.btn-primary {
+    background: #EA7457;
+}
+
+button.btn-primary:hover {
+    background: #333;
+}
+
+button.btn-secondary {
+    background: #333;
+}
+
+button.btn-secondary:hover {
+    background: #EA7457;
+}
+
+/* ==============================================
+   CASE STUDY DESIGN SYSTEM
+   Inspired by johnsexton.net
+   ============================================== */
+
+/* Case Study Hero */
+.cs-hero {
+    background-color: #1a1a2e;
+    margin: 0 -168px;
+    padding: 100px 168px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cs-hero h1 {
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+.cs-hero .cs-hero-subtitle {
+    font-size: 16px;
+    line-height: 28px;
+    color: rgba(255,255,255,0.6);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Executive Summary Block */
+.exec-summary {
+    background-color: #FAFAFA;
+    padding: 48px 48px 40px;
+    margin: -40px auto 0;
+    max-width: 860px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    border-bottom: 3px solid #EA7457;
+}
+
+.exec-summary .exec-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.exec-summary .exec-meta-item {
+    min-width: 0;
+}
+
+.exec-summary .exec-meta-item h4 {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #EA7457;
+    margin-bottom: 10px;
+}
+
+.exec-summary .exec-meta-item p {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    max-width: none;
+    color: #333;
+}
+
+.exec-summary h3 {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+.exec-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exec-summary ul li {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.exec-summary ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 2px;
+    background-color: #EA7457;
+}
+
+/* Full-bleed image sections */
+.cs-image-full {
+    background-color: #F5F5F5;
+    margin: 0 -168px;
+    padding: 60px 168px;
+    text-align: center;
+}
+
+.cs-image-full img {
+    width: 100%;
+    max-width: 1054px;
+    display: block;
+    margin: 0 auto;
+}
+
+.cs-image-full.dark {
+    background-color: #1a1a2e;
+}
+
+.cs-image-full.light {
+    background-color: #F5F5F5;
+}
+
+.cs-image-full.white {
+    background-color: #fff;
+}
+
+/* Outcome callout box */
+.cs-outcome {
+    background-color: #1a1a2e;
+    margin: 0 -168px;
+    padding: 60px 168px;
+    text-align: center;
+}
+
+.cs-outcome h3 {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #EA7457;
+    margin-bottom: 20px;
+}
+
+.cs-outcome p {
+    font-size: 20px;
+    line-height: 34px;
+    color: #fff;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Related work section */
+.cs-related {
+    border-top: 1px solid #E0E0E0;
+    margin-top: 80px;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.cs-related h2 {
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.cs-related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.cs-related-card {
+    background-color: #FAFAFA;
+    padding: 32px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    display: block;
+}
+
+.cs-related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.cs-related-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.cs-related-card p {
+    font-size: 13px;
+    line-height: 22px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.cs-related-card .cs-related-link {
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #EA7457;
+    text-transform: uppercase;
+}
+
+/* Section label refinement for case studies */
+.case-study-wrapper h2.section-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: #EA7457;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* Larger case study section headings */
+.case-study-wrapper h2.cs-heading {
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+/* Case study body text */
+.case-study-wrapper p.cs-body {
+    font-size: 16px;
+    line-height: 30px;
+    color: #444;
+    max-width: 700px;
+}
+
+/* Prototype links styled as buttons */
+.cs-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.cs-links a {
+    display: inline-block;
+    border: 1px solid #EA7457;
+    padding: 12px 24px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #EA7457;
+    transition: all 0.2s ease;
+}
+
+.cs-links a:hover {
+    background: #EA7457;
+    color: #fff;
+}
+
+/* White variant for links inside dark sections */
+.cs-outcome .cs-links a {
+    border-color: rgba(255,255,255,0.4);
+    color: #fff;
+}
+
+.cs-outcome .cs-links a:hover {
+    border-color: #EA7457;
+    background: #EA7457;
+    color: #fff;
+}
+
+/* ==============================================
+   PAGE-LEVEL HERO SYSTEM
+   Shared dark hero pattern for all pages
+   ============================================== */
+
+/* Generic page hero (non-case-study pages) */
+.page-hero {
+    background-color: #1a1a2e;
+    margin: 0 -168px;
+    padding: 80px 168px 60px;
+    text-align: center;
+    position: relative;
+}
+
+.page-hero h1 {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    text-transform: none;
+}
+
+.page-hero .page-hero-subtitle {
+    font-size: 15px;
+    line-height: 26px;
+    color: rgba(255,255,255,0.55);
+    max-width: 540px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Full-bleed accent section (shared across pages) */
+.section-band {
+    margin: 0 -168px;
+    padding: 60px 168px;
+}
+
+.section-band.dark {
+    background-color: #1a1a2e;
+}
+
+.section-band.light {
+    background-color: #F5F5F5;
+}
+
+.section-band.white {
+    background-color: #fff;
+}
+
+/* Suppress inner borders/margins when inside section bands */
+.section-band .brand-wrapper {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.section-band .impact-summary {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.section-band .teams-wrapper {
+    margin-top: 0;
+}
+
+/* Dark band content overrides */
+.section-band.dark .impact-summary h2 {
+    color: #EA7457;
+}
+
+.section-band.dark .impact-summary ul li {
+    color: rgba(255,255,255,0.85);
+}
+
+.section-band.dark .impact-summary ul li::before {
+    background-color: #EA7457;
+}
+
+/* Unified section label (coral uppercase micro-label) */
+.section-label-inline {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #EA7457;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Impact bullets on homepage */
+.impact-summary {
+    border-top: 1px solid #BBBBBB;
+    margin-top: 23px;
+    padding-top: 41px;
+    padding-bottom: 20px;
+}
+
+.impact-summary h2 {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18.2px;
+    letter-spacing: 2.34px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.impact-summary ul {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.impact-summary ul li {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.impact-summary ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 2px;
+    background-color: #EA7457;
+}
+
+/* Case study section labels */
+.case-study-wrapper h2.section-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: #EA7457;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+/* Bio bullet lists */
+.work-exp-wrapper dd ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.work-exp-wrapper dd ul li {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.work-exp-wrapper dd ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 2px;
+    background-color: #EA7457;
+}
+
+/* Executive bio section */
+.exec-bio {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.19px;
+    margin-bottom: 27px;
+}
+
+/* Download CV button */
+.cv-download {
+    display: inline-block;
+    border: 1px solid #333;
+    padding: 12px 24px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.2s ease;
+    margin-top: 16px;
+    margin-bottom: 40px;
+}
+
+.cv-download:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* NDA work categories */
+.nda-categories {
+    max-width: 709px;
+    margin: 0 auto 40px auto;
+}
+
+.nda-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nda-categories ul li {
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.16px;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.nda-categories ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 8px;
+    height: 2px;
+    background-color: #EA7457;
+}
+
+.nda-categories h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 767px) {
+
+    /* ---- Hero negative margin reset for mobile ---- */
+    .page-content > .page-hero:first-child,
+    .page-content > .cs-hero:first-child {
+        margin-top: 0;
+    }
+
+    /* ---- Page hero ---- */
+    .page-hero {
+        margin: 0 -19px;
+        padding: 40px 19px 32px;
+    }
+    .page-hero h1 {
+        font-size: 24px;
+        letter-spacing: 0.5px;
+    }
+    .page-hero .page-hero-subtitle {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    /* ---- Section bands ---- */
+    .section-band {
+        margin: 0 -19px;
+        padding: 30px 19px;
+    }
+
+    /* ---- Case study hero ---- */
+    .cs-hero {
+        margin: 0 -19px;
+        padding: 50px 19px 40px;
+    }
+    .cs-hero h1 {
+        font-size: 24px;
+        letter-spacing: 0.5px;
+    }
+    .cs-hero .cs-hero-subtitle {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    /* ---- Exec summary ---- */
+    .exec-summary {
+        padding: 20px 16px;
+        margin-top: -16px;
+        border-bottom-width: 2px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .exec-summary .exec-meta {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    .exec-summary .exec-meta-item h4 {
+        font-size: 9px;
+        letter-spacing: 2px;
+        margin-bottom: 6px;
+    }
+    .exec-summary .exec-meta-item p {
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .exec-summary h3 {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+    .exec-summary ul li {
+        font-size: 13px;
+        line-height: 22px;
+        padding-left: 16px;
+        margin-bottom: 8px;
+    }
+    .exec-summary ul li::before {
+        top: 9px;
+        width: 6px;
+    }
+
+    /* ---- Full-bleed images ---- */
+    .cs-image-full {
+        margin: 0 -19px;
+        padding: 20px 19px;
+    }
+
+    /* ---- Outcome callout ---- */
+    .cs-outcome {
+        margin: 0 -19px;
+        padding: 36px 19px;
+    }
+    .cs-outcome p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .cs-outcome .cs-links {
+        margin-top: 8px;
+    }
+
+    /* ---- Related work ---- */
+    .cs-related {
+        margin-top: 50px;
+        padding-top: 40px;
+    }
+    .cs-related-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .cs-related-card {
+        padding: 24px;
+    }
+
+    /* ---- CS links / buttons ---- */
+    .cs-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .cs-links a {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        padding: 12px 16px;
+        font-size: 11px;
+        box-sizing: border-box;
+    }
+
+    /* ---- Case study wrapper spacing ---- */
+    .case-study-wrapper {
+        margin-top: 40px;
+    }
+
+    /* ---- Case study text ---- */
+    .case-study-wrapper h2.cs-heading {
+        font-size: 20px;
+        padding: 0 4px;
+    }
+    .case-study-wrapper p.cs-body {
+        font-size: 14px;
+        line-height: 26px;
+        padding: 0 4px;
+        max-width: 100%;
+    }
+    .case-study-wrapper h2.section-label {
+        font-size: 10px;
+    }
+
+    /* ---- Impact summary ---- */
+    .impact-summary ul {
+        padding: 0 4px;
+    }
+    .impact-summary ul li {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    /* ---- NDA categories inside band ---- */
+    .section-band .nda-categories {
+        max-width: 100%;
+    }
+    .nda-categories ul li {
+        font-size: 13px;
+        line-height: 24px;
+    }
+
+    /* ---- Contact form ---- */
+    .contact-wrapper {
+        margin: 40px auto 60px auto;
+        padding: 0 4px;
+    }
+
+    /* ---- CV download ---- */
+    .cv-download {
+        font-size: 11px;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    /* ---- Teams logo grid ---- */
+    .teams-wrapper .teams-logo {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .teams-wrapper .teams-logo li {
+        margin-top: 0;
+        padding: 4px;
+    }
+    .teams-wrapper .teams-logo li img {
+        width: 80px;
+    }
+
+    /* ---- Work experience no-wrap fix ---- */
+    .no-wrap {
+        flex-wrap: wrap !important;
+    }
+    .work-exp-wrapper dt {
+        min-width: 100%;
+        margin-right: 0;
+    }
+
+    /* ---- Reduce large spacing utility on mobile ---- */
+    .margin-bottom-100px {
+        margin-bottom: 40px !important;
+    }
+
+    /* ---- Work wrapper inside page (remove border when follows band) ---- */
+    .work-wrapper {
+        border-top: none;
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+
+    /* ---- Brand wrapper inside section-band ---- */
+    .section-band .brand-wrapper {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    /* ---- Page content bottom padding ---- */
+    .page-content {
+        padding-bottom: 0;
+    }
+
+    /* ---- Footer spacing ---- */
+    .footer-wrapper {
+        min-height: 56px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    /* ---- Hero negative margin reset for tablet ---- */
+    .page-content > .page-hero:first-child,
+    .page-content > .cs-hero:first-child {
+        margin-top: 0;
+    }
+
+    /* ---- Page hero ---- */
+    .page-hero {
+        margin: 0 -19px;
+        padding: 60px 19px 46px;
+    }
+    .page-hero h1 {
+        font-size: 30px;
+    }
+
+    /* ---- Section bands ---- */
+    .section-band {
+        margin: 0 -19px;
+        padding: 40px 19px;
+    }
+
+    /* ---- Case study hero ---- */
+    .cs-hero {
+        margin: 0 -19px;
+        padding: 70px 19px 50px;
+    }
+    .cs-hero h1 {
+        font-size: 32px;
+    }
+
+    /* ---- Full-bleed images ---- */
+    .cs-image-full {
+        margin: 0 -19px;
+        padding: 36px 19px;
+    }
+
+    /* ---- Outcome callout ---- */
+    .cs-outcome {
+        margin: 0 -19px;
+        padding: 50px 19px;
+    }
+
+    /* ---- Exec summary ---- */
+    .exec-summary {
+        padding: 32px 28px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .exec-summary .exec-meta {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ---- Case study wrapper spacing ---- */
+    .case-study-wrapper {
+        margin-top: 60px;
+    }
+
+    /* ---- Case study text ---- */
+    .case-study-wrapper h2.cs-heading {
+        font-size: 24px;
+    }
+    .case-study-wrapper p.cs-body {
+        font-size: 15px;
+        line-height: 28px;
+    }
+
+    /* ---- Case study banners ---- */
+    .case-study-banner,
+    .case-study-banner-visa,
+    .case-study-banner-att {
+        height: 350px;
+    }
+
+    /* ---- Contact wrapper ---- */
+    .contact-wrapper {
+        margin: 50px auto 80px auto;
+    }
+
+    /* ---- Teams logo ---- */
+    .teams-wrapper .teams-logo {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .teams-wrapper .teams-logo li {
+        margin-top: 0;
+        padding: 4px;
+    }
+    .teams-wrapper .teams-logo li img {
+        width: 110px;
+    }
+
+    /* ---- Work experience no-wrap fix ---- */
+    .no-wrap {
+        flex-wrap: wrap !important;
+    }
+
+    /* ---- Related work ---- */
+    .cs-related-card {
+        padding: 28px;
+    }
+
+    /* ---- Reduce large spacing utility on tablet ---- */
+    .margin-bottom-100px {
+        margin-bottom: 60px !important;
+    }
+
+    /* ---- Work wrapper spacing ---- */
+    .work-wrapper {
+        border-top: none;
+        margin-top: 20px;
+    }
+
+    /* ---- Brand wrapper inside section-band ---- */
+    .section-band .brand-wrapper {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+    }
+}
+
+.v-hidden {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 767px) {
+    .is-mobile {
+        display: flex;
+    }
+
+    .is-desktop {
+        display: none;
+    }
+
+    #buttonScrollToTop {
+        display: none !important;
+    }
+
+    /* ---- Page content ---- */
+    .page-content {
+        padding: 0 19px;
+        padding-bottom: 0;
+    }
+
+    /* ---- Navigation ---- */
+    .navigation-bar {
+        flex-direction: column;
+        position: sticky;
+    }
+
+    .nav-wrapper {
+        text-align: center;
+        padding: 0 19px;
+        position: relative;
+    }
+
+    .nav-link li, .nav-link li:last-child {
+        margin-right: 0;
+    }
+
+    .navigation-bar .logo-name {
+        margin-bottom: 0;
+    }
+
+    .nav-link {
+        flex-direction: column;
+    }
+
+    /* ---- Homepage banner (legacy, no longer primary) ---- */
+    .banner-wrapper {
+        margin-top: 16px;
+    }
+
+    .banner-wrapper h1.home-page-title {
+        flex-basis: 100%;
+        font-size: 25px;
+        line-height: 32.8px;
+    }
+
+    .banner-wrapper h1.home-page-title .tag.tag-line-2 {
+        margin-bottom: 22px;
+    }
+
+    /* ---- Skills grid ---- */
+    .skills-wrapper {
+        margin-top: 27px;
+        padding: 0 4px;
+    }
+
+    .skills-wrapper .skills-wrapper-list li {
+        flex-basis: 100%;
+        padding-right: 0;
+    }
+
+    /* ---- Brand logos ---- */
+    .brand-wrapper ul {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .brand-wrapper ul li {
+        margin-right: 6px;
+        margin-bottom: 6px;
+    }
+
+    .brand-wrapper ul li img {
+        width: 68px;
+    }
+
+    .brand-wrapper p {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    /* ---- Work cards: stack vertically on mobile ---- */
+    .work-wrapper li {
+        flex-direction: column !important;
+    }
+
+    .work-wrapper li .work-image {
+        min-width: 100%;
+        width: 100%;
+        height: 260px;
+        background-size: cover;
+        background-position: center top;
+    }
+
+    .work-wrapper li .work-content {
+        padding: 24px 20px;
+        align-self: stretch;
+        position: static;
+        top: 0;
+    }
+
+    .work-wrapper li.left .work-content {
+        margin: 0;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .work-wrapper li.right .work-content {
+        margin: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .work-wrapper li .work-content h3 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 12px;
+    }
+
+    .work-wrapper li .work-content p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    /* ---- Case study banners ---- */
+    .case-study-banner,
+    .case-study-banner-visa,
+    .case-study-banner-att {
+        min-height: 200px;
+        min-width: auto;
+        height: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .case-study-wrapper {
+        margin-top: 40px;
+    }
+
+    .case-study-wrapper .case-study-img img {
+        width: 100%;
+    }
+
+    /* ---- Leadership ---- */
+    .banner-leadership img {
+        width: 100%;
+    }
+
+    .banner-leadership {
+        margin-top: 20px !important;
+    }
+
+    .leadership-wrapper {
+        margin-top: 24px;
+    }
+
+    .my-core-leadership-value-wrapper {
+        margin-top: 50px;
+    }
+
+    .values-wrapper {
+        padding-bottom: 20px;
+    }
+
+    /* ---- Work experience ---- */
+    .work-exp-wrapper dl {
+        flex-direction: column;
+        margin-bottom: 36px;
+    }
+
+    .work-exp-wrapper dd {
+        padding: 0;
+        margin-top: 8px;
+    }
+
+    /* ---- Form ---- */
+    .two-col {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .two-col .input-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Leadership */
+.banner-leadership {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-leadership img {
+    /* width: 100%; */
+}
+
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Scroll to top */
+#buttonScrollToTop {
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #ffffffd9;
+    position: fixed;
+    padding: 5px;
+    top: 70px;
+    right: 5px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+@media screen and (min-width: 1400px) {
+    #buttonScrollToTop {
+        right: 265px;
+    }
+}
+
+#buttonScrollToTop::before {
+    content: "\f0d8";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.7em;
+    line-height: 0;
+    position: relative;
+    top: 3px;
+    color: initial;
+}
+
+#buttonScrollToTop .label {
+    text-transform: uppercase;
+    color: #2D2D2D;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    margin-left: 5px;
+}
+
+#buttonScrollToTop:hover::before {
+    color: #fff;
+}
+
+#buttonScrollToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Styles for the content section */
+@media (min-width: 500px) {
+    #buttonScrollToTop {
+        margin: 0;
+    }
+}
+
+#hamburger-icon {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+}
+
+#hamburger-icon div {
+    width: 24px;
+    height: 1px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-2px, 4px);
+}
+
+.open .bar2 {
+    opacity: 0;
+}
+
+.open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: inherit;
+    background-color: #1a1a2e;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 20px;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+}
+
+.mobile-menu li {
+    margin-bottom: 45px;
+}
+
+.mobile-menu li a {
+    color: #fff;
+    font-size: 28px;
+}
+
+.mobile-menu li a.selected {
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1024px) {
+    .navigation-bar .nav-link {
+        display: none;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .is-mobile {
+        display: flex;
+    }
+
+    .is-desktop {
+        display: none;
+    }
+
+    /* ---- Page content ---- */
+    .page-content {
+        padding: 0 19px;
+        padding-bottom: 0;
+    }
+
+    .nav-wrapper {
+        padding: 0 19px;
+    }
+
+    /* ---- Banner ---- */
+    .banner-wrapper h1.home-page-title .tag.tag-line-2 {
+        margin-bottom: 52px;
+    }
+
+    .banner-wrapper h1.home-page-title {
+        font-size: 48px;
+    }
+
+    /* ---- Skills ---- */
+    .skills-wrapper .skills-wrapper-list li {
+        padding-right: 0;
+    }
+
+    .skills-wrapper .skills-wrapper-list {
+        justify-content: space-between;
+    }
+
+    /* ---- Work cards ---- */
+    .work-wrapper li {
+        flex-direction: column !important;
+    }
+
+    .work-wrapper li .work-image {
+        height: 380px;
+        min-width: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center top;
+    }
+
+    .work-wrapper li .work-content {
+        position: static;
+        top: 0;
+        padding: 32px;
+        align-self: stretch;
+    }
+
+    .work-wrapper li.left .work-content {
+        margin: 0;
+        margin-left: 0;
+    }
+
+    .work-wrapper li.right .work-content {
+        margin: 0;
+        margin-right: 0;
+    }
+
+    /* ---- Brand logos ---- */
+    .brand-wrapper ul li {
+        margin-right: 4px;
+    }
+
+    .brand-wrapper ul li img {
+        width: 69px;
+    }
+
+    .brand-wrapper p {
+        text-align: center;
+    }
+
+    .brand-wrapper ul {
+        margin-bottom: 20px;
+        border-bottom: none;
+        padding-bottom: 0;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+    .navigation-bar .logo-name {
+        font-size: 20px;
+    }
+
+    .navigation-bar.active {
+        background-color: #1a1a2e;
+    }
+
+    .navigation-bar .mobile-menu {
+        background-color: #1a1a2e;
+        border: none;
+        top: 44px;
+        z-index: 2;
+        height: 100vh;
+        align-items: center;
+        padding-top: 100px;
+    }
+
+    /* ---- Leadership values stack vertically ---- */
+    ul.value-container {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    ul.value-container li {
+        margin-bottom: 20px;
+        min-width: 0;
+    }
+
+    /* ---- Leadership banner ---- */
+    .banner-leadership img {
+        width: 100%;
+    }
+
+    /* ---- Profile banner ---- */
+    .profile-banner {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .profile-img {
+        min-height: 280px;
+        min-width: auto;
+        height: auto;
+        background-size: contain;
+        display: flex;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 0 16px 0;
+    }
+
+    /* ---- Footer ---- */
+    .footer-wrapper {
+        font-size: 12px;
+    }
+}
+
+/* ── COOKIE CONSENT BANNER ─────────────────────────────────────────────── */
+#consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1a1816;
+    color: #f8f5f0;
+    padding: 18px 28px;
+    z-index: 9999;
+    border-top: 1px solid #2a2522;
+    font-family: 'Inter', system-ui, sans-serif;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.18);
+    animation: consent-rise 0.3s ease-out;
+}
+@keyframes consent-rise {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.consent-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.consent-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #d4d2cc;
+    margin: 0;
+    flex: 1 1 60%;
+    min-width: 240px;
+}
+.consent-text a {
+    color: #fbbf24;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(251, 191, 36, 0.4);
+}
+.consent-text a:hover {
+    border-bottom-color: #fbbf24;
+}
+.consent-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.consent-btn {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.18s ease;
+    white-space: nowrap;
+}
+.consent-btn-primary {
+    background: #b85718;
+    color: #fff;
+    border-color: #b85718;
+}
+.consent-btn-primary:hover {
+    background: #8f4413;
+    border-color: #8f4413;
+}
+.consent-btn-text {
+    background: transparent;
+    color: rgba(248, 245, 240, 0.75);
+    border-color: rgba(248, 245, 240, 0.25);
+}
+.consent-btn-text:hover {
+    color: #f8f5f0;
+    border-color: #f8f5f0;
+}
+@media (max-width: 640px) {
+    #consent-banner { padding: 16px 20px; }
+    .consent-inner { flex-direction: column; align-items: stretch; }
+    .consent-actions { width: 100%; justify-content: flex-end; }
+}
+
+/* ── CASE-STUDY GRID RESPONSIVE FALLBACKS ──────────────────────────────────
+   Inline-styled CSS Grid blocks in case-study pages (problem trios, wireframe
+   options, specs sheets, vision mocks) need explicit collapse rules at narrow
+   widths since inline styles can't be overridden without high specificity.
+   3-column grids → 1 column at ≤640px (mobile)
+   2-column grids → keep 2 columns down to mobile; collapse to 1 only at very
+   narrow widths where each cell would be unreadable. */
+@media (max-width: 640px) {
+    .case-study-wrapper [style*="grid-template-columns: repeat(3"],
+    .case-study-wrapper [style*="repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+}
+@media (max-width: 420px) {
+    .case-study-wrapper [style*="grid-template-columns: repeat(2"],
+    .case-study-wrapper [style*="repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+}
+
+/* Meta-data labels in case-study exec-summary blocks.
+   Previously rendered as <h4> which created h1→h4 heading-hierarchy jumps.
+   Converted to .meta-label paragraphs while preserving identical visual styling. */
+.exec-summary .exec-meta-item .meta-label {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #EA7457;
+    margin-bottom: 10px;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+@media screen and (max-width: 767px) {
+    .exec-summary .exec-meta-item .meta-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+        margin-bottom: 6px;
+    }
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   MICHEL VAN HEEST — 1:1 ALIGNMENT (PHASE 4)
+   Direct port of michelvanheest.com design system (sourced from
+   /css/style.css, /css/cases.css, /css/index.css, /css/nav.css,
+   /css/profile.css, /css/socials.css). All numbers, color tokens, and
+   spacing values match Michel's CSS exactly. Inter is used as a free
+   substitute for the licensed Mark font, and IBM Plex Mono is loaded
+   from Google Fonts for code accents.
+   This block is intended to override and supersede every prior style
+   on home.html and the top-level nav pages (work/about/leadership/
+   perspective/contact). Case study pages keep their existing styles.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* ============ FONTS ============ */
+/* Mark Pro substitute: Inter, weight 400 (regular) and 700 (bold).
+   IBM Plex Mono comes from Google Fonts (added to <head>).
+   Tighter line-height matches Michel's 1.2 default. */
+body.michel,
+.michel-page * {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    line-height: 1.2;
+    box-sizing: border-box;
+}
+
+/* ============ THEME TOKENS (verbatim from michelvanheest.com) ============ */
+.michel-page {
+    --neutral-900: #111418;
+    --neutral-900-a4: rgba(17, 20, 24, 0.04);
+    --neutral-800: #1A1E23;
+    --neutral-700: #5A5F66;
+    --neutral-600: #828891;
+    --neutral-500: #AEB4BD;
+    --neutral-300: #ECECEF;
+    --neutral-200: #F9F9FA;
+    --neutral-100: #FFFFFF;
+    --neutral-100-a80: rgba(255, 255, 255, 0.8);
+    --neutral-100-a16: rgba(255, 255, 255, 0.16);
+    --brand-1-500: #FF9900;
+    --brand-1-200: #FFEDD1;
+    --brand-1-100: #FFF3E0;
+    --signal-error: #C51A16;
+    --shadow-elevation-100: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    --shadow-elevation-200: 0px 2px 24px rgba(27, 32, 39, 0.08), 0px 2px 8px -8px rgba(27, 32, 39, 0.32), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+}
+
+/* Page-wide background — off-white with the warm orange gradient at the top */
+body.michel {
+    background-color: #F9F9FA !important;
+    color: #5A5F66;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+@media only screen and (min-width: 992px) {
+    body.michel {
+        background-image: url(../images/hero-gradient.svg);
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+::selection { color: #FFFFFF; background: #FF9900; }
+::-moz-selection { color: #FFFFFF; background: #FF9900; }
+
+/* ============ TYPOGRAPHY (verbatim sizes) ============ */
+.michel-page h1, .michel-page h2, .michel-page h3,
+.michel-page h5, .michel-page h6,
+.michel-page a, .michel-page p strong,
+.michel-page blockquote p {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    color: #111418;
+    margin: 0;
+    line-height: 1.2;
+}
+.michel-page h4, .michel-page p {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    color: #5A5F66;
+    margin: 0;
+}
+.michel-page h5 { color: #AEB4BD; }
+.michel-page h6.subheader { color: #5A5F66; font-weight: 400; font-size: 12px; line-height: 1.4; }
+
+.michel-page h1, .michel-page h2 { font-size: 36px; line-height: 44px; }
+.michel-page h3 { font-size: 24px; line-height: 36px; }
+.michel-page h4 { font-size: 20px; line-height: 32px; font-weight: 400; }
+.michel-page h5 { font-size: 18px; line-height: 28px; font-weight: 700; }
+.michel-page h6 { font-size: 12px; line-height: 1.4; font-weight: 400; }
+.michel-page p, .michel-page li { font-size: 16px; line-height: 24px; font-weight: 400; color: #5A5F66; }
+.michel-page p strong { font-weight: 700; color: #111418; }
+.michel-page p.p-smaller, .michel-page p.p-smaller a { font-size: 12px; line-height: 16px; }
+
+@media only screen and (min-width: 992px) {
+    .michel-page h1 { font-size: 54px; line-height: 72px; }
+    .michel-page h2 { font-size: 48px; line-height: 56px; }
+    .michel-page h3 { font-size: 32px; line-height: 44px; }
+    .michel-page h4 { font-size: 22px; line-height: 30px; }
+    .michel-page h5 { font-size: 20px; line-height: 32px; }
+    .michel-page h6 { font-size: 14px; line-height: 18px; }
+    .michel-page p, .michel-page li { font-size: 18px; line-height: 28px; }
+    .michel-page p.p-smaller, .michel-page p.p-smaller a { font-size: 14px; line-height: 20px; }
+}
+
+.michel-page h1, .michel-page h3, .michel-page h4 { margin-bottom: 16px; }
+.michel-page h2 { margin-bottom: 8px; }
+.michel-page p { margin-bottom: 24px; }
+
+/* ============ LINKS (Michel's signature: orange border-bottom) ============ */
+.michel-page a {
+    color: #FF9900;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    text-decoration: none;
+    transition: all .24s cubic-bezier(0, 0, 0, 1.16);
+}
+.michel-page a:hover { border-bottom-color: #FF9900; text-decoration: none; }
+.michel-page a.a-larger, .michel-page h4 a { border-bottom-width: 3px; }
+.michel-page a.a-default { border-bottom-width: 2.5px; font-size: 16px; line-height: 24px; }
+.michel-page a.a-smaller { border-bottom-width: 2px; }
+.michel-page a.a-larger { font-size: 20px; line-height: 32px; }
+@media only screen and (min-width: 992px) {
+    .michel-page a.a-larger { font-size: 22px; line-height: 30px; }
+    .michel-page a.a-default { font-size: 18px; line-height: 28px; }
+}
+.michel-page a .button { margin-left: 4px; display: inline-block; }
+.michel-page a.a-larger .button { width: 24px; height: 24px; transform: translateY(5px); }
+.michel-page a.a-default .button { width: 16px; height: 16px; transform: translateY(1px); }
+.michel-page a:hover .button { margin-left: 8px; }
+
+/* Inverted link variant for use on dark cards */
+.michel-page .case-card-large-outer a,
+.michel-page .case-card-large-outer h3,
+.michel-page .case-card-large-outer h5 { color: #FFFFFF; }
+.michel-page .case-card-large-outer h4,
+.michel-page .case-card-large-outer p { color: rgba(255,255,255,0.8); }
+.michel-page .case-card-large-outer a:hover { border-bottom-color: rgba(255,255,255,0.8); }
+
+/* ============ UTILITY CLASSES (Michel's exact) ============ */
+.michel-page .border-radius-16 { border-radius: 16px; }
+.michel-page .border-radius-24 { border-radius: 24px; }
+.michel-page .border-radius-32 { border-radius: 32px; }
+.michel-page .border-radius-40 { border-radius: 40px; }
+.michel-page .border-radius-100 { border-radius: 100px; }
+.michel-page .elevation-100 { box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1); }
+.michel-page .elevation-200 { box-shadow: 0px 2px 24px rgba(27, 32, 39, 0.08), 0px 2px 8px -8px rgba(27, 32, 39, 0.32), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1); }
+
+.michel-page .margin-top-4 { margin-top: 4px; }
+.michel-page .margin-top-8 { margin-top: 8px; }
+.michel-page .margin-top-16 { margin-top: 16px; }
+.michel-page .margin-top-24 { margin-top: 24px; }
+.michel-page .margin-top-32 { margin-top: 32px; }
+.michel-page .margin-top-40 { margin-top: 40px; }
+.michel-page .margin-top-64 { margin-top: 64px; }
+.michel-page .margin-top-80 { margin-top: 80px; }
+.michel-page .margin-bottom-4 { margin-bottom: 4px; }
+.michel-page .margin-bottom-8 { margin-bottom: 8px; }
+.michel-page .margin-bottom-16 { margin-bottom: 16px; }
+.michel-page .margin-bottom-24 { margin-bottom: 24px; }
+.michel-page .margin-bottom-32 { margin-bottom: 32px; }
+.michel-page .margin-bottom-40 { margin-bottom: 40px; }
+.michel-page .margin-bottom-48 { margin-bottom: 48px; }
+.michel-page .margin-bottom-56 { margin-bottom: 56px; }
+.michel-page .margin-bottom-64 { margin-bottom: 64px; }
+.michel-page .margin-bottom-80 { margin-bottom: 80px; }
+.michel-page .margin-bottom-120 { margin-bottom: 120px; }
+.michel-page .margin-right-4 { margin-right: 4px; }
+.michel-page .margin-right-8 { margin-right: 8px; }
+.michel-page .margin-right-16 { margin-right: 16px; }
+.michel-page .padding-top-24 { padding-top: 24px; }
+.michel-page .padding-top-64 { padding-top: 64px; }
+.michel-page .padding-bottom-24 { padding-bottom: 24px; }
+.michel-page .padding-24 { padding: 24px; }
+.michel-page .padding-32 { padding: 32px; }
+
+/* ============ GRID — minimal Bootstrap-compatible (12-col) ============ */
+.michel-page .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+.michel-page .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+    align-items: center;
+}
+.michel-page [class^="col-"] {
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.michel-page .col-12 { width: 100%; }
+.michel-page .col-6 { width: 50%; }
+.michel-page .col-7 { width: 58.33%; }
+@media (min-width: 769px) {
+    .michel-page .col-md-3 { width: 25%; }
+    .michel-page .col-md-5 { width: 41.67%; }
+    .michel-page .col-md-6 { width: 50%; }
+    .michel-page .col-md-7 { width: 58.33%; }
+    .michel-page .col-md-9 { width: 75%; }
+    .michel-page .offset-md-1 { margin-left: 8.33%; }
+}
+@media (min-width: 992px) {
+    .michel-page .col-lg-2 { width: 16.67%; }
+    .michel-page .col-lg-3 { width: 25%; }
+    .michel-page .col-lg-5 { width: 41.67%; }
+    .michel-page .col-lg-6 { width: 50%; }
+    .michel-page .offset-lg-1 { margin-left: 8.33%; }
+    .michel-page .offset-lg-7 { margin-left: 58.33%; }
+}
+@media (min-width: 1200px) {
+    .michel-page .col-xl-2 { width: 16.67%; }
+    .michel-page .col-xl-6 { width: 50%; }
+    .michel-page .col-xl-7 { width: 58.33%; }
+    .michel-page .offset-xl-2 { margin-left: 16.67%; }
+}
+
+/* ============ SECTION RHYTHM ============ */
+.michel-page section { margin: 64px 0px; }
+.michel-page .divider-vertical {
+    width: 2px;
+    height: 64px;
+    margin: 0 auto;
+    background-color: #ECECEF;
+}
+.michel-page .divider-horizontal {
+    width: 100%;
+    height: 2px;
+    background-color: #ECECEF;
+}
+@media (min-width: 992px) { .michel-page .divider-vertical { height: 80px; } }
+
+/* ============ NAV (Michel's pattern: profile left, socials right) ============ */
+.michel-page nav.michel-nav {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.michel-page nav.michel-nav .row { align-items: center; }
+.michel-page nav.michel-nav .navbar-right,
+.michel-page nav.michel-nav .navbar-right .socials {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Profile component (40px circular image + name + role) */
+.michel-page .profile {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    border-bottom: none !important;
+}
+.michel-page .profile:hover { border-bottom: none !important; }
+.michel-page .profile-img-circle,
+.michel-page .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    margin-right: 8px;
+    background-color: #111418;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    transition: transform .3s cubic-bezier(0.445, 1.65, 0.455, 1.485);
+    /* monogram fallback */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF9900;
+    font-size: 14px;
+    font-weight: 700;
+}
+.michel-page .profile:hover .profile-img-circle,
+.michel-page .profile:hover img { transform: scale(1.1, 1.1); }
+.michel-page .profile-text h6 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111418;
+    line-height: 18px;
+    margin: 0;
+}
+.michel-page .profile-text p {
+    font-size: 12px;
+    line-height: 16px;
+    color: #5A5F66;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Socials component (32px circular buttons with subtle bg) */
+.michel-page .socials { display: flex; align-items: center; }
+.michel-page .socials a {
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(17, 20, 24, 0.04);
+    border-bottom: none !important;
+    color: #5A5F66;
+    transition: transform .3s cubic-bezier(0.445, 1.65, 0.455, 1.485);
+}
+.michel-page .socials a:hover { transform: scale(1.1, 1.1); border-bottom: none !important; }
+.michel-page .socials a:first-of-type { margin-left: 0; }
+.michel-page .socials a svg { width: 16px; height: 16px; fill: #5A5F66; }
+
+/* ============ HERO (text left, photo right) ============ */
+.michel-page .hero { margin-top: 40px; }
+.michel-page .hero h1, .michel-page .hero h4 { margin-bottom: 8px; }
+.michel-page .hero .row > div:first-of-type { margin-bottom: 40px; }
+@media only screen and (min-width: 769px) {
+    .michel-page .hero .row { display: flex; align-items: center; }
+    .michel-page .hero .row > div:first-of-type { margin-bottom: 0; }
+}
+@media only screen and (min-width: 1280px) {
+    .michel-page .hero .row { align-items: flex-start; }
+    .michel-page .hero .row > div:first-of-type { margin-top: 180px; }
+}
+.michel-page .hero-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 24px;
+    background-color: #111418;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    /* monogram fallback */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF9900;
+    font-size: 200px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+/* ============ WORKED-WITH (logos row) ============ */
+.michel-page .worked-with .row:first-of-type { text-align: center; }
+.michel-page .worked-with .row {
+    justify-content: space-evenly;
+    align-items: center;
+}
+.michel-page .worked-with .row a {
+    display: inline-block;
+    border-bottom: none !important;
+    transition: transform .3s cubic-bezier(0.445, 1.65, 0.455, 1.485);
+}
+.michel-page .worked-with .row a:hover { opacity: 0.88; transform: scale(1.05, 1.05); border-bottom: none !important; }
+.michel-page .worked-with .row img { margin: 4px 0; height: 60px; }
+@media (min-width: 524px) { .michel-page .worked-with .row img { margin: 4px; height: 80px; } }
+@media (min-width: 767px) { .michel-page .worked-with .row { justify-content: space-between; } }
+@media (min-width: 992px) { .michel-page .worked-with .row img { margin: 0; height: 73px; } }
+
+/* ============ CASE-CARD-LARGE (Michel's signature dark cards) ============ */
+/* Note: Michel uses margin-top:-48px to pull cards up under the section, but his
+   intro h4 is 1-2 lines. Tommy's longer intro means we drop the negative margin
+   and let the section bottom-margin breathe instead. */
+.michel-page .case-card-large-wrapper { margin-top: 0; }
+.michel-page .case-card-large-outer {
+    width: 93%;
+    max-width: 1450px;
+    margin: 0px auto 32px auto;
+    overflow: hidden;
+    padding: 32px 17px;
+    border-radius: 32px;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+}
+@media (min-width: 992px) { .michel-page .case-card-large-outer { padding: 0 32px; } }
+@media (min-width: 1280px) { .michel-page .case-card-large-outer { padding: 0 48px; } }
+.michel-page .case-card-large-outer .row { align-items: center; }
+.michel-page .case-card-large-icon {
+    height: 64px;
+    width: 64px;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #111418;
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+.michel-page .case-card-large h3 { color: #FFFFFF; font-size: 24px; line-height: 36px; margin-bottom: 8px; }
+.michel-page .case-card-large h4 { color: rgba(255,255,255,0.8); white-space: pre-line; font-size: 20px; line-height: 32px; margin-bottom: 16px; }
+@media (min-width: 992px) {
+    .michel-page .case-card-large h3 { font-size: 32px; line-height: 44px; }
+    .michel-page .case-card-large h4 { font-size: 22px; line-height: 30px; }
+}
+.michel-page .case-card-large-outer pre {
+    font-family: 'Inter', system-ui, sans-serif;
+    white-space: pre-wrap;
+    margin: 0;
+}
+/* Large card image: let the natural image aspect drive height — each card is
+   on its own row (one card per case study), so no alignment constraint with
+   neighbors. Cap width at 100% so wide OG images don't overflow the column. */
+.michel-page .case-card-large-image {
+    margin-top: 24px;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    display: block;
+    object-fit: contain;
+}
+@media (min-width: 769px) {
+    .michel-page .case-card-large-image { margin-top: 0; }
+}
+
+/* Card colorways — adapted per Tommy case study */
+.michel-page .card-paciolan { background-color: #0B132B; }
+.michel-page .card-onetrust { background-color: #1A1A2E; }
+.michel-page .card-blueshield { background-color: #003D5B; }
+.michel-page .card-visa { background-color: #1A1F71; }
+.michel-page .card-fiserv { background-color: #FF6B35; }
+.michel-page .card-att { background-color: #00A8E0; }
+.michel-page .card-onetrust-esg { background-color: #2E5339; }
+.michel-page .card-optera { background-color: #2C3531; }
+.michel-page .card-bank { background-color: #1B3B6F; }
+
+/* ============ CASE-CARD-SMALL (on the side, etc.) ============ */
+/* For small-card pair rows we want stretch alignment so neighbors line up
+   regardless of copy length. Scoped to columns that ACTUALLY hold a small
+   card — otherwise the intro h2/h4 row breaks (flex flows its children
+   horizontally, splitting the heading apart). */
+.michel-page .work .row:has(.case-card-small) { align-items: stretch; }
+.michel-page .work .row > [class^="col-"]:has(.case-card-small) {
+    display: flex;
+    align-items: stretch;
+}
+.michel-page .case-card-small-link {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+.michel-page .case-card-small {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.michel-page .case-card-small-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    transition: transform .4s cubic-bezier(0.445, 1.65, 0.455, 1.485);
+    background-color: #ECECEF;
+}
+.michel-page .case-card-small-link { display: block; border-bottom: none !important; }
+.michel-page .case-card-small-link:hover { border-bottom: none !important; }
+.michel-page .case-card-small-link:hover .case-card-small-image { transform: translateY(-16px) scale(1.01, 1.01); }
+.michel-page .case-card-small h3 { font-size: 24px; line-height: 36px; margin-bottom: 8px; color: #111418; }
+.michel-page .case-card-small p { color: #5A5F66; margin-bottom: 16px; }
+@media (min-width: 992px) {
+    .michel-page .case-card-small h3 { font-size: 32px; line-height: 44px; }
+}
+
+/* ============ RECOMMENDATIONS (testimonial cards) ============ */
+.michel-page .recommendations .recommendation {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+}
+.michel-page .recommendations .recommendation p { margin-bottom: 24px; }
+.michel-page .recommendations-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+@media (min-width: 769px) {
+    .michel-page .recommendations-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============ FOOTER (profile + socials + contact) ============ */
+.michel-page footer.michel-footer {
+    background: transparent;
+    margin-top: 64px;
+    padding-top: 64px;
+    padding-bottom: 24px;
+    color: #5A5F66;
+    font-family: 'Inter', system-ui, sans-serif;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.michel-page footer.michel-footer p.p-smaller { color: #5A5F66; }
+.michel-page footer.michel-footer a { color: #FF9900; border-bottom: 2px solid transparent; }
+.michel-page footer.michel-footer a:hover { border-bottom-color: #FF9900; }
+
+/* ============ ELEMENT RESETS — kill the existing chrome on michel pages ============ */
+body.michel .navigation-bar,
+body.michel .footer-wrapper,
+body.michel #buttonScrollToTop {
+    display: none !important;
+}
+
+/* Fix ::before/::after monogram artifact only on hero photo when it has bg-image */
+.michel-page .hero-photo[style*="background-image"] {
+    color: transparent;
+}
+
+/* ============ FORMS (contact page) ============ */
+.michel-page .contact-form input,
+.michel-page .contact-form textarea {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #ECECEF;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111418;
+    margin-bottom: 16px;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.04);
+    transition: border-color .24s cubic-bezier(0, 0, 0, 1.16);
+}
+.michel-page .contact-form input:focus,
+.michel-page .contact-form textarea:focus {
+    outline: none;
+    border-color: #FF9900;
+}
+.michel-page .contact-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111418;
+    margin-bottom: 4px;
+}
+.michel-page .contact-form button {
+    background: #111418;
+    color: #FFFFFF;
+    border: 1px solid #111418;
+    border-radius: 100px;
+    padding: 14px 32px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .24s cubic-bezier(0, 0, 0, 1.16);
+}
+.michel-page .contact-form button:hover { background: #FF9900; border-color: #FF9900; }
+
+/* ════════════════════════════════════════════════════════════════════════
+   MICHEL-THEMED LAYER (Phase 5)
+   Applied via body.michel-themed — retrofits Michel typography, palette,
+   and component patterns onto the EXISTING navigation/hero/footer chrome.
+   No HTML restructure needed; pages just add class="michel-themed" to body.
+   home.html keeps body.michel + .michel-page (full restructure).
+   ════════════════════════════════════════════════════════════════════════ */
+
+body.michel-themed {
+    background-color: #F9F9FA !important;
+    color: #5A5F66 !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    line-height: 1.2;
+    margin: 0;
+}
+body.michel-themed *,
+body.michel-themed *::before,
+body.michel-themed *::after {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    box-sizing: border-box;
+}
+body.michel-themed .page-content {
+    background-color: #F9F9FA !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Soft orange-gradient bloom at the top, like Michel's homepage */
+@media only screen and (min-width: 992px) {
+    body.michel-themed {
+        background-image: url(../images/hero-gradient.svg);
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+::selection { color: #FFFFFF; background: #FF9900; }
+
+/* ============ NAV — restyle existing .navigation-bar to Michel pattern ============ */
+body.michel-themed .navigation-bar {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    padding: 24px 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+}
+body.michel-themed .nav-wrapper {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 24px;
+}
+
+/* Logo name → mimic the .profile component (avatar + name + role) */
+body.michel-themed .logo-name {
+    position: relative !important;
+    padding-left: 52px !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #111418 !important;
+    text-transform: none !important;
+    letter-spacing: -0.01em !important;
+    line-height: 18px !important;
+    border-bottom: none !important;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-height: 40px;
+    text-decoration: none !important;
+}
+body.michel-themed .logo-name::before {
+    content: 'TW';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: #111418;
+    color: #FF9900;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s cubic-bezier(0.445, 1.65, 0.455, 1.485);
+}
+body.michel-themed .logo-name:hover::before { transform: scale(1.1, 1.1); }
+body.michel-themed .logo-name::after {
+    content: 'VP of Design';
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #5A5F66;
+    margin-top: 2px;
+}
+
+/* Primary nav links — refined typography, orange underline on hover/selected */
+body.michel-themed ul.nav-link {
+    display: flex !important;
+    gap: 32px;
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: center;
+}
+body.michel-themed ul.nav-link li {
+    padding: 0 !important;
+    border: none !important;
+    margin: 0 !important;
+    background: none !important;
+}
+body.michel-themed ul.nav-link a {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    color: #5A5F66 !important;
+    border-bottom: 2px solid transparent !important;
+    padding-bottom: 2px !important;
+    text-decoration: none !important;
+    transition: all .24s cubic-bezier(0, 0, 0, 1.16);
+    background: none !important;
+}
+body.michel-themed ul.nav-link a:hover {
+    color: #111418 !important;
+    border-bottom-color: #FF9900 !important;
+}
+body.michel-themed ul.nav-link a.selected {
+    color: #111418 !important;
+    border-bottom-color: #FF9900 !important;
+    font-weight: 600 !important;
+}
+
+/* Hide hamburger on desktop; reveal mobile-menu on small screens */
+body.michel-themed #hamburger-icon {
+    display: none;
+}
+@media (max-width: 768px) {
+    body.michel-themed ul.nav-link { display: none !important; }
+    body.michel-themed #hamburger-icon {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+        background: none !important;
+        border: none !important;
+        padding: 8px !important;
+    }
+    body.michel-themed #hamburger-icon .bar1,
+    body.michel-themed #hamburger-icon .bar2,
+    body.michel-themed #hamburger-icon .bar3 {
+        width: 22px;
+        height: 2px;
+        background-color: #111418;
+        transition: all .24s cubic-bezier(0, 0, 0, 1.16);
+    }
+    body.michel-themed #hamburger-icon .mobile-menu {
+        display: none;
+        position: absolute !important;
+        top: calc(100% + 8px) !important;
+        right: 16px !important;
+        left: auto !important;
+        background: #FFFFFF !important;
+        border-radius: 16px !important;
+        box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1) !important;
+        padding: 16px 24px !important;
+        list-style: none !important;
+        margin: 0 !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        z-index: 1000 !important;
+        width: auto !important;
+        min-width: 200px;
+        height: auto !important;
+    }
+    body.michel-themed #hamburger-icon .mobile-menu li {
+        margin: 0 !important;
+        padding: 8px 0 !important;
+        background: none !important;
+        border: none !important;
+    }
+    body.michel-themed #hamburger-icon.open .mobile-menu {
+        display: flex !important;
+    }
+    /* Animate hamburger bars into an X when open */
+    body.michel-themed #hamburger-icon.open .bar1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    body.michel-themed #hamburger-icon.open .bar2 {
+        opacity: 0;
+    }
+    body.michel-themed #hamburger-icon.open .bar3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    body.michel-themed #hamburger-icon .mobile-menu a {
+        font-family: 'Inter', system-ui, sans-serif !important;
+        font-size: 14px;
+        color: #111418 !important;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+        font-weight: 500;
+        text-decoration: none !important;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 2px;
+    }
+    body.michel-themed #hamburger-icon .mobile-menu a.selected {
+        border-bottom-color: #FF9900;
+    }
+}
+
+/* ============ PAGE HERO — convert dark navy slab to cream editorial ============ */
+body.michel-themed .page-hero {
+    background-color: transparent !important;
+    margin: 0 !important;
+    padding: 64px 0 48px !important;
+    text-align: left !important;
+    border-bottom: none !important;
+}
+body.michel-themed .page-hero h1 {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 44px !important;
+    line-height: 52px !important;
+    font-weight: 700 !important;
+    color: #111418 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: none !important;
+    margin: 0 0 16px !important;
+    max-width: 820px;
+}
+@media (min-width: 992px) {
+    body.michel-themed .page-hero h1 {
+        font-size: 54px !important;
+        line-height: 72px !important;
+    }
+}
+body.michel-themed .page-hero .page-hero-subtitle {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 18px !important;
+    line-height: 28px !important;
+    font-weight: 400 !important;
+    color: #5A5F66 !important;
+    max-width: 720px !important;
+    margin: 0 !important;
+    text-align: left !important;
+}
+@media (min-width: 992px) {
+    body.michel-themed .page-hero .page-hero-subtitle {
+        font-size: 20px !important;
+        line-height: 32px !important;
+    }
+}
+
+/* ============ CASE STUDY HERO — keep dark, but Michel typography ============ */
+body.michel-themed .cs-hero {
+    background-color: #111418 !important;
+    margin: 0 -24px !important;
+    padding: 80px 24px 64px !important;
+    border-radius: 0 !important;
+}
+@media (min-width: 992px) {
+    body.michel-themed .cs-hero {
+        border-radius: 32px !important;
+        margin: 24px 0 !important;
+    }
+}
+body.michel-themed .cs-hero h1 {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 44px !important;
+    line-height: 52px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    color: #FFFFFF !important;
+    text-transform: none !important;
+}
+@media (min-width: 992px) {
+    body.michel-themed .cs-hero h1 {
+        font-size: 54px !important;
+        line-height: 64px !important;
+    }
+}
+body.michel-themed .cs-hero .cs-hero-subtitle {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 18px !important;
+    line-height: 28px !important;
+    color: rgba(255, 255, 255, 0.72) !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+/* ============ EXEC SUMMARY (case study) ============ */
+body.michel-themed .exec-summary {
+    background-color: #FFFFFF !important;
+    border-radius: 16px !important;
+    border-bottom: none !important;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1) !important;
+    padding: 32px !important;
+    margin: -32px auto 32px !important;
+    position: relative;
+    z-index: 2;
+}
+body.michel-themed .exec-summary h3 {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #111418 !important;
+    margin-bottom: 16px !important;
+}
+body.michel-themed .exec-summary p {
+    color: #5A5F66 !important;
+}
+body.michel-themed .exec-summary .meta-label {
+    color: #FF9900 !important;
+    font-size: 11px !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+}
+
+/* ============ TYPOGRAPHY DEFAULTS for content under .page-content ============ */
+body.michel-themed .page-content h2,
+body.michel-themed .page-content h3,
+body.michel-themed .page-content h4 {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    color: #111418 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+    text-transform: none !important;
+}
+body.michel-themed .page-content h2 { font-size: 32px; line-height: 40px; margin-bottom: 16px; }
+body.michel-themed .page-content h3 { font-size: 24px; line-height: 32px; margin-bottom: 12px; }
+body.michel-themed .page-content h4 { font-size: 20px; line-height: 28px; margin-bottom: 8px; }
+@media (min-width: 992px) {
+    body.michel-themed .page-content h2 { font-size: 36px; line-height: 44px; }
+    body.michel-themed .page-content h3 { font-size: 28px; line-height: 36px; }
+}
+body.michel-themed .page-content p,
+body.michel-themed .page-content li {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 16px !important;
+    line-height: 26px !important;
+    color: #5A5F66 !important;
+    font-weight: 400 !important;
+}
+@media (min-width: 992px) {
+    body.michel-themed .page-content p,
+    body.michel-themed .page-content li {
+        font-size: 18px !important;
+        line-height: 28px !important;
+    }
+}
+body.michel-themed .page-content strong { color: #111418 !important; font-weight: 700 !important; }
+body.michel-themed .page-content a {
+    color: #FF9900 !important;
+    border-bottom: 2px solid transparent !important;
+    text-decoration: none !important;
+    transition: all .24s cubic-bezier(0, 0, 0, 1.16);
+}
+body.michel-themed .page-content a:hover {
+    border-bottom-color: #FF9900 !important;
+}
+
+/* ============ BUTTONS ============ */
+body.michel-themed .btn-primary,
+body.michel-themed form button[type="submit"] {
+    background: #111418 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #111418 !important;
+    border-radius: 100px !important;
+    padding: 14px 28px !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    transition: all .24s cubic-bezier(0, 0, 0, 1.16) !important;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+body.michel-themed .btn-primary:hover,
+body.michel-themed form button[type="submit"]:hover {
+    background: #FF9900 !important;
+    border-color: #FF9900 !important;
+    color: #FFFFFF !important;
+}
+
+/* ============ FORMS (contact) ============ */
+body.michel-themed .input-container input,
+body.michel-themed .input-container textarea {
+    width: 100%;
+    background: #FFFFFF !important;
+    border: 1px solid #ECECEF !important;
+    border-radius: 8px !important;
+    padding: 14px 16px !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 16px !important;
+    color: #111418 !important;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.04) !important;
+    transition: border-color .24s cubic-bezier(0, 0, 0, 1.16);
+}
+body.michel-themed .input-container input:focus,
+body.michel-themed .input-container textarea:focus {
+    outline: none !important;
+    border-color: #FF9900 !important;
+}
+body.michel-themed .input-container label {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #111418 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    margin-bottom: 4px !important;
+    display: block;
+}
+
+/* ============ FOOTER — slim, Michel-style ============ */
+body.michel-themed .footer-wrapper {
+    background-color: transparent !important;
+    color: #5A5F66 !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 13px !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    padding: 48px 24px !important;
+    border-top: 1px solid #ECECEF !important;
+    margin-top: 64px !important;
+}
+
+/* ============ MISC CHROME ============ */
+body.michel-themed #buttonScrollToTop {
+    background: #111418 !important;
+    color: #FFFFFF !important;
+    border-radius: 100px !important;
+    border: none !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 12px !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    padding: 12px 20px !important;
+}
+body.michel-themed #buttonScrollToTop:hover {
+    background: #FF9900 !important;
+}
+
+/* Case study wrapper internal spacing */
+body.michel-themed .case-study-wrapper {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    padding: 32px 24px !important;
+}
+body.michel-themed .case-study-wrapper section,
+body.michel-themed .case-study-wrapper > div {
+    margin-bottom: 48px;
+}
+
+/* Cards on case study pages (cs-image-full, etc.) */
+body.michel-themed .cs-image-full img,
+body.michel-themed .case-study-wrapper img {
+    border-radius: 16px !important;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+}
+
+/* Outcome banner */
+body.michel-themed .cs-outcome {
+    background-color: #FFFFFF !important;
+    border-radius: 16px !important;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1) !important;
+    padding: 32px !important;
+    border: none !important;
+}
+body.michel-themed .cs-outcome h3 {
+    color: #111418 !important;
+}
+body.michel-themed .cs-outcome .cs-links a {
+    background: #111418 !important;
+    color: #FFFFFF !important;
+    border-radius: 100px !important;
+    padding: 12px 24px !important;
+    border: 1px solid #111418 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+}
+body.michel-themed .cs-outcome .cs-links a:nth-child(2) {
+    background: transparent !important;
+    color: #111418 !important;
+    border-color: #ECECEF !important;
+}
+body.michel-themed .cs-outcome .cs-links a:hover {
+    background: #FF9900 !important;
+    border-color: #FF9900 !important;
+    color: #FFFFFF !important;
+}
+
+/* Phase 5 follow-ups (themed page polish) */
+
+/* Perspective section labels in orange */
+body.michel-themed .perspective-section .label,
+body.michel-themed .meta-label,
+body.michel-themed .exec-meta-item .meta-label {
+    color: #FF9900 !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 12px !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+}
+
+/* Perspective item titles + meta */
+body.michel-themed .perspective-section h2 {
+    font-size: 28px !important;
+    line-height: 36px !important;
+    color: #111418 !important;
+    font-weight: 700 !important;
+}
+body.michel-themed .perspective-section .item-title {
+    font-size: 18px !important;
+    color: #111418 !important;
+    font-weight: 700 !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+}
+body.michel-themed .perspective-section .item-meta {
+    color: #828891 !important;
+    font-size: 12px !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+}
+body.michel-themed .perspective-section li {
+    border-bottom-color: #ECECEF !important;
+    padding: 24px 0 !important;
+}
+
+/* Bio resume page — profile-img block (T monogram) */
+body.michel-themed .profile-img {
+    background-color: #111418 !important;
+    border-radius: 16px !important;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1) !important;
+}
+body.michel-themed .profile-img::before {
+    color: #FF9900 !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.04em !important;
+}
+body.michel-themed .profile-img::after {
+    color: rgba(255,255,255,0.55) !important;
+    letter-spacing: 0.18em !important;
+    font-weight: 500 !important;
+}
+
+/* Section bands in bio-resume — flatten them, use Michel's transparent + dividers approach */
+body.michel-themed .section-band {
+    background: transparent !important;
+    margin: 32px 0 !important;
+    padding: 32px 0 !important;
+    border-top: 1px solid #ECECEF;
+    border-bottom: 1px solid #ECECEF;
+}
+body.michel-themed .section-band.dark {
+    background-color: #111418 !important;
+    border-radius: 16px;
+    border: none;
+    padding: 32px !important;
+    margin: 32px 0 !important;
+}
+body.michel-themed .section-band.dark h2,
+body.michel-themed .section-band.dark p,
+body.michel-themed .section-band.dark li {
+    color: #FFFFFF !important;
+}
+body.michel-themed .section-band.dark h2 {
+    color: #FF9900 !important;
+    font-size: 14px !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+}
+
+/* Work experience entries on bio-resume */
+body.michel-themed .work-exp-wrapper dl dt {
+    border-bottom: 1px solid #ECECEF;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+body.michel-themed .work-exp-wrapper dl dt p {
+    color: #111418 !important;
+    font-weight: 700 !important;
+}
+
+/* Brands / teams wrapper logos */
+body.michel-themed .teams-wrapper h2,
+body.michel-themed .brand-wrapper h2 {
+    font-size: 14px !important;
+    color: #FF9900 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-weight: 700 !important;
+}
+
+/* CTA / Pull quote on leadership page */
+body.michel-themed .pull-quote {
+    border-left: 4px solid #FF9900 !important;
+    background: transparent !important;
+    padding: 0 0 0 24px !important;
+    margin: 32px 0 !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 22px !important;
+    line-height: 32px !important;
+    color: #111418 !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+}
+
+/* NDA Statement (work.html) */
+body.michel-themed .nda-statement {
+    background: #FFFFFF !important;
+    border: none !important;
+    border-left: 4px solid #FF9900 !important;
+    border-radius: 8px !important;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1) !important;
+    padding: 20px 28px !important;
+    font-size: 15px !important;
+    color: #5A5F66 !important;
+}
+
+/* Work intro / cards on work.html */
+body.michel-themed .work-card {
+    background: #FFFFFF !important;
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1) !important;
+    padding: 32px 36px !important;
+    transition: transform .24s cubic-bezier(0, 0, 0, 1.16), box-shadow .24s cubic-bezier(0, 0, 0, 1.16) !important;
+}
+body.michel-themed .work-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0px 12px 32px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1) !important;
+}
+body.michel-themed .work-card.featured {
+    background: #111418 !important;
+}
+body.michel-themed .work-card.featured h3,
+body.michel-themed .work-card.featured p,
+body.michel-themed .work-card.featured .work-meta {
+    color: #FFFFFF !important;
+}
+body.michel-themed .work-card.featured p { color: rgba(255,255,255,0.72) !important; }
+body.michel-themed .work-card.featured .work-meta { color: #FF9900 !important; }
+body.michel-themed .work-card.featured a.work-link { color: #FF9900 !important; }
+body.michel-themed .work-card h3 {
+    font-size: 24px !important;
+    color: #111418 !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+}
+body.michel-themed .work-card p {
+    color: #5A5F66 !important;
+    font-size: 15px !important;
+    line-height: 24px !important;
+}
+body.michel-themed .work-meta {
+    color: #FF9900 !important;
+    font-size: 12px !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    margin-bottom: 12px !important;
+}
+body.michel-themed .work-tags span {
+    background: rgba(255, 153, 0, 0.12) !important;
+    color: #B85718 !important;
+    font-size: 11px !important;
+    letter-spacing: 0.04em !important;
+    padding: 4px 10px !important;
+    border-radius: 100px !important;
+}
+body.michel-themed a.work-link {
+    color: #111418 !important;
+    border-bottom: 2px solid #FF9900 !important;
+    padding-bottom: 2px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    background: none !important;
+}
+body.michel-themed a.work-link:hover {
+    color: #FF9900 !important;
+}
+
+/* Currently / social-proof on bio */
+body.michel-themed .currently,
+body.michel-themed .social-proof {
+    background: #FFFFFF !important;
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1) !important;
+    padding: 32px !important;
+    margin: 32px auto !important;
+}
+body.michel-themed .currently h2 {
+    color: #FF9900 !important;
+    font-size: 14px !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+}
+
+/* Resume download link */
+body.michel-themed .cv-download {
+    background: #111418 !important;
+    color: #FFFFFF !important;
+    border-radius: 100px !important;
+    padding: 12px 24px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    text-decoration: none !important;
+    display: inline-block;
+    border: 1px solid #111418 !important;
+    transition: all .24s cubic-bezier(0, 0, 0, 1.16);
+}
+body.michel-themed .cv-download:hover {
+    background: #FF9900 !important;
+    border-color: #FF9900 !important;
+    color: #FFFFFF !important;
+}
+
+/* Fix CV download to stay inline-block, not full-width */
+body.michel-themed .cv-download {
+    display: inline-flex !important;
+    align-items: center;
+    width: auto !important;
+    margin-top: 16px;
+}
+
+/* Profile banner layout on bio-resume */
+body.michel-themed .profile-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+@media (min-width: 768px) {
+    body.michel-themed .profile-banner {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    body.michel-themed .profile-banner .profile-img {
+        flex-shrink: 0;
+    }
+    body.michel-themed .profile-banner .profile-content {
+        flex: 1;
+    }
+}
+
+/* Bio exec bio text wrapping */
+body.michel-themed .exec-bio {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 17px !important;
+    line-height: 28px !important;
+    color: #5A5F66 !important;
+    font-weight: 400 !important;
+}
+
+/* Work experience definition list — clean up old styles */
+body.michel-themed .work-exp-wrapper h2 {
+    font-size: 14px !important;
+    color: #FF9900 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-weight: 700 !important;
+    margin-bottom: 24px !important;
+}
+body.michel-themed .work-exp-wrapper dl dt p {
+    font-size: 20px !important;
+    line-height: 28px !important;
+    font-weight: 700 !important;
+    color: #111418 !important;
+    margin-bottom: 4px !important;
+}
+body.michel-themed .work-exp-wrapper dl dd {
+    color: #5A5F66 !important;
+    font-size: 15px !important;
+    line-height: 24px !important;
+    margin: 8px 0 24px 0 !important;
+}
+
+/* Teams wrapper: logo grid centered */
+body.michel-themed .teams-logo {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+body.michel-themed .teams-logo li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+body.michel-themed .teams-logo img {
+    height: 56px;
+    width: auto;
+    opacity: 0.7;
+    transition: opacity .24s, transform .24s cubic-bezier(0.445, 1.65, 0.455, 1.485);
+}
+body.michel-themed .teams-logo img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   UNIFIED NAV (Phase 6) — same nav pattern across home + themed pages.
+   Profile (left) + 5 primary links (center) + socials (right).
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* HOME nav (.michel-nav) */
+.michel-page .michel-nav {
+    padding: 24px 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+}
+.michel-page .michel-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.michel-page .michel-nav-profile {
+    flex-shrink: 0;
+    text-decoration: none !important;
+    border: none !important;
+}
+.michel-page .michel-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
+.michel-page .michel-nav-links li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.michel-page .michel-nav-links a {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #5A5F66;
+    letter-spacing: 0;
+    text-transform: none;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    transition: all .24s cubic-bezier(0, 0, 0, 1.16);
+}
+.michel-page .michel-nav-links a:hover {
+    color: #111418;
+    border-bottom-color: #FF9900;
+}
+.michel-page .michel-nav-links a.selected {
+    color: #111418;
+    border-bottom-color: #FF9900;
+    font-weight: 600;
+}
+.michel-page .michel-nav-socials { flex-shrink: 0; }
+
+/* THEMED nav additions: append socials cluster to the right */
+body.michel-themed .navigation-bar .nav-wrapper {
+    gap: 16px;
+}
+body.michel-themed .nav-socials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+body.michel-themed .nav-socials a {
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
+    background-color: rgba(17, 20, 24, 0.04) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5A5F66 !important;
+    border: none !important;
+    text-decoration: none !important;
+    transition: transform .3s cubic-bezier(0.445, 1.65, 0.455, 1.485);
+}
+body.michel-themed .nav-socials a:hover {
+    transform: scale(1.1, 1.1);
+    border: none !important;
+    background-color: rgba(255, 153, 0, 0.12) !important;
+    color: #FF9900 !important;
+}
+body.michel-themed .nav-socials svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* MOBILE — collapse nav links to hamburger on both nav variants */
+@media (max-width: 880px) {
+    .michel-page .michel-nav-links {
+        display: none;
+    }
+    .michel-page .michel-nav-inner {
+        justify-content: space-between;
+    }
+    body.michel-themed ul.nav-link {
+        display: none !important;
+    }
+}
+
+/* Small adjustment to themed nav-wrapper so nav-link is centered */
+body.michel-themed .nav-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px;
+}
+body.michel-themed ul.nav-link {
+    flex: 1;
+    justify-content: center;
+}
+
+/* Phase 6b: Leadership paragraph rhythm — original .leadership-wrapper p had
+   no margin-bottom; under themed pages, give paragraphs natural spacing. */
+body.michel-themed .leadership-wrapper p {
+    margin-bottom: 20px !important;
+    font-size: 16px !important;
+    line-height: 26px !important;
+}
+@media (min-width: 992px) {
+    body.michel-themed .leadership-wrapper p {
+        font-size: 17px !important;
+        line-height: 28px !important;
+    }
+}
+body.michel-themed .leadership-wrapper p:last-child {
+    margin-bottom: 0 !important;
+}
+body.michel-themed .leadership-wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+}
+body.michel-themed .leadership-wrapper h2 {
+    text-align: left;
+    margin-bottom: 24px !important;
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   PHASE 6c — final polish
+   - 404 .err-hero overflow fix
+   - CV download stretch fix on bio-resume
+   - Footer unify (themed pages get richer Michel-style footer)
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* 404 hero — neutralize the legacy -168px negative margin and restyle */
+body.michel-themed .err-hero {
+    background-color: #111418 !important;
+    color: #FFFFFF !important;
+    margin: 24px 0 56px !important;
+    padding: 80px 32px !important;
+    text-align: center;
+    border-radius: 24px;
+}
+body.michel-themed .err-hero h1 {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 44px !important;
+    line-height: 52px !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    margin-bottom: 16px !important;
+    letter-spacing: -0.02em !important;
+}
+@media (min-width: 992px) {
+    body.michel-themed .err-hero h1 {
+        font-size: 54px !important;
+        line-height: 64px !important;
+    }
+}
+body.michel-themed .err-hero p {
+    color: rgba(255, 255, 255, 0.72) !important;
+    max-width: 560px;
+    margin: 0 auto 24px !important;
+}
+body.michel-themed .err-code {
+    color: #FF9900 !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 16px !important;
+}
+body.michel-themed .err-btn {
+    background: #FFFFFF !important;
+    color: #111418 !important;
+    border-radius: 100px !important;
+    padding: 14px 28px !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    text-decoration: none !important;
+    border: 1px solid #FFFFFF !important;
+    display: inline-block;
+    transition: all .24s cubic-bezier(0, 0, 0, 1.16);
+}
+body.michel-themed .err-btn:hover {
+    background: #FF9900 !important;
+    border-color: #FF9900 !important;
+    color: #FFFFFF !important;
+}
+body.michel-themed .err-btn-secondary {
+    background: transparent !important;
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+body.michel-themed .err-ctas {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+/* CV download — prevent stretching by limiting align and width */
+body.michel-themed .cv-download {
+    align-self: flex-start;
+    max-width: max-content;
+}
+body.michel-themed .profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Footer enrichment — themed page footers get profile + socials + contact */
+body.michel-themed .footer-wrapper {
+    padding: 48px 24px !important;
+    border-top: 1px solid #ECECEF;
+    margin-top: 64px;
+    background: transparent !important;
+    color: #5A5F66 !important;
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+}
+body.michel-themed .footer-wrapper::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: #111418;
+    color: #FF9900;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 700;
+    margin: 0 auto 12px;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    content: 'TW';
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body.michel-themed .footer-wrapper {
+    text-align: center;
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   PHASE 7 — Real headshot integration
+   When images/tommy-headshot.jpg loads, the <img> elements with
+   .profile-img-circle and .hero-photo-img classes render the photo.
+   If the file is missing, the onerror handler swaps in a TW monogram div.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* Profile avatar — img variant (40px circle on nav/footer) */
+img.profile-img-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    object-fit: cover;
+    object-position: center top;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    margin-right: 8px;
+    flex-shrink: 0;
+    background-color: #ECECEF;
+    transition: transform .3s cubic-bezier(0.445, 1.65, 0.455, 1.485);
+}
+.michel-page .profile:hover img.profile-img-circle { transform: scale(1.1, 1.1); }
+
+/* Hero photo on home — img variant (square block, ~520px max) */
+img.hero-photo-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 24px;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    background-color: #111418;
+    display: block;
+}
+
+/* Themed nav logo — when headshot is loaded, hide the ::before monogram and
+   render the photo via background-image instead. We use a background-image
+   on .logo-name itself rather than a separate <img> so we don't have to
+   restructure every page's nav markup. */
+body.michel-themed .logo-name {
+    background-image: url('../images/tommy-headshot.jpg');
+    background-size: 40px 40px;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+}
+/* When the image fails to load (404 returned), browser still applies background-color */
+body.michel-themed .logo-name::before {
+    /* Keep the monogram as fallback if photo isn't available — background-image
+       overlays the ::before circle which has the same dimensions, so if the
+       image loads it covers the monogram; if not, the monogram shows through */
+    z-index: -1;
+}
+
+/* Bio-resume profile-img — use real photo as background, hide T monogram */
+body.michel-themed .profile-img {
+    background-image: url('../images/tommy-headshot.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+    background-color: #111418;
+}
+body.michel-themed .profile-img::before,
+body.michel-themed .profile-img::after {
+    display: none;
+}
+
+/* Footer ::before avatar (themed pages) — replace with photo */
+body.michel-themed .footer-wrapper::before {
+    background-image: url('../images/tommy-headshot.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    color: transparent !important;
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   PHASE 8 — Walkthrough gate for sensitive case studies
+   Used on paciolan-design, onetrust-privacy, onetrust-esg, optera-climate
+   (current employer or NDA-sensitive work shared only on request).
+   ════════════════════════════════════════════════════════════════════════ */
+
+body.michel-themed .cs-walkthrough-gate {
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0px 2px 16px -8px rgba(27, 32, 39, 0.16), inset 0px 0px 0px 0.5px rgba(27, 32, 39, 0.1);
+    padding: 48px 32px;
+    max-width: 820px;
+    margin: 48px auto;
+    text-align: center;
+    position: relative;
+}
+@media (min-width: 992px) {
+    body.michel-themed .cs-walkthrough-gate {
+        padding: 64px 56px;
+    }
+}
+body.michel-themed .cs-walkthrough-gate::before {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 24px;
+    background-color: rgba(255, 153, 0, 0.12);
+    border-radius: 100px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF9900' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+}
+body.michel-themed .cs-gate-label {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    color: #FF9900 !important;
+    margin-bottom: 16px !important;
+}
+body.michel-themed .cs-walkthrough-gate h2 {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 28px !important;
+    line-height: 36px !important;
+    font-weight: 700 !important;
+    color: #111418 !important;
+    letter-spacing: -0.015em !important;
+    margin-bottom: 16px !important;
+    text-transform: none !important;
+}
+@media (min-width: 992px) {
+    body.michel-themed .cs-walkthrough-gate h2 {
+        font-size: 32px !important;
+        line-height: 42px !important;
+    }
+}
+body.michel-themed .cs-walkthrough-gate p {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 17px !important;
+    line-height: 28px !important;
+    color: #5A5F66 !important;
+    font-weight: 400 !important;
+    max-width: 560px;
+    margin: 0 auto 32px !important;
+}
+body.michel-themed .cs-gate-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 32px;
+}
+body.michel-themed .cs-gate-btn {
+    background: #111418 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #111418 !important;
+    border-radius: 100px !important;
+    padding: 14px 28px !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    text-decoration: none !important;
+    transition: all .24s cubic-bezier(0, 0, 0, 1.16) !important;
+    display: inline-block;
+}
+body.michel-themed .cs-gate-btn:hover {
+    background: #FF9900 !important;
+    border-color: #FF9900 !important;
+    color: #FFFFFF !important;
+}
+body.michel-themed .cs-gate-btn-secondary {
+    background: transparent !important;
+    color: #111418 !important;
+    border-color: #ECECEF !important;
+}
+body.michel-themed .cs-gate-note {
+    margin-top: 24px !important;
+    font-size: 13px !important;
+    color: #828891 !important;
+    font-weight: 500 !important;
+    font-style: italic;
+}
+
+/* "By request" badge on work.html listings */
+body.michel-themed .by-request-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(255, 153, 0, 0.12);
+    color: #B85718;
+    border-radius: 100px;
+    padding: 4px 12px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+body.michel-themed .by-request-badge::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #FF9900;
+    border-radius: 100px;
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   PHASE 9 — PRINT STYLES
+   Optimized for printing bio-resume.html as a clean resume document.
+   Hides nav, footer, decorative chrome. Strips colors to monochrome,
+   simplifies typography, ensures readable layout on 8.5×11 / A4 paper.
+   ════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    /* Hide all chrome that doesn't belong on paper */
+    .navigation-bar,
+    .footer-wrapper,
+    #buttonScrollToTop,
+    .navigation-bar *,
+    #hamburger-icon,
+    .nav-socials,
+    .walkthrough-gate-overlay,
+    .cs-walkthrough-gate,
+    .cs-outcome,
+    .cs-related,
+    .work-intro,
+    .nda-statement,
+    .currently,
+    .social-proof,
+    .section-band,
+    .recommendations,
+    .perspective-section .label,
+    .teams-wrapper,
+    .essay-back {
+        display: none !important;
+    }
+
+    /* Strip backgrounds, force black-on-white */
+    *,
+    *::before,
+    *::after {
+        background: white !important;
+        background-image: none !important;
+        background-color: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        border-color: #ccc !important;
+    }
+
+    body,
+    body.michel,
+    body.michel-themed,
+    .page-content {
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: Georgia, 'Times New Roman', serif !important;
+        font-size: 11pt !important;
+        line-height: 1.5 !important;
+        color: #000 !important;
+    }
+
+    .page-content {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Hero — strip dark navy, replace with simple top section */
+    .page-hero,
+    .cs-hero {
+        background: white !important;
+        padding: 0 0 16pt !important;
+        margin: 0 0 16pt !important;
+        text-align: left !important;
+        border-bottom: 1px solid #000 !important;
+    }
+    .page-hero h1,
+    .cs-hero h1 {
+        font-family: Georgia, 'Times New Roman', serif !important;
+        font-size: 24pt !important;
+        line-height: 28pt !important;
+        font-weight: bold !important;
+        color: #000 !important;
+        margin: 0 0 4pt !important;
+        letter-spacing: 0 !important;
+    }
+    .page-hero .page-hero-subtitle,
+    .cs-hero .cs-hero-subtitle {
+        font-family: Georgia, 'Times New Roman', serif !important;
+        font-size: 11pt !important;
+        line-height: 15pt !important;
+        color: #333 !important;
+        margin: 0 !important;
+        font-style: italic !important;
+    }
+
+    /* Section headers */
+    h2, h3 {
+        font-family: Georgia, 'Times New Roman', serif !important;
+        color: #000 !important;
+        page-break-after: avoid;
+        margin-top: 14pt !important;
+        margin-bottom: 4pt !important;
+    }
+    h2 { font-size: 13pt !important; line-height: 16pt !important; }
+    h3 { font-size: 12pt !important; line-height: 15pt !important; }
+
+    /* Body paragraphs */
+    p, li {
+        color: #000 !important;
+        font-size: 10.5pt !important;
+        line-height: 14pt !important;
+        margin-bottom: 6pt !important;
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* Strip orange accents from print — use bold + black instead */
+    strong, .work-meta, .meta-label {
+        color: #000 !important;
+        font-weight: bold !important;
+    }
+
+    /* Profile photo block — show but make it small + grayscale */
+    .profile-img,
+    .home-hero-photo,
+    img.hero-photo-img,
+    img.profile-img-circle {
+        max-width: 80pt !important;
+        max-height: 80pt !important;
+        filter: grayscale(100%) !important;
+        page-break-inside: avoid;
+    }
+    .profile-img::before,
+    .profile-img::after,
+    .hero-photo::before {
+        display: none !important;
+    }
+
+    /* CV download link — replace with the URL itself in print */
+    a.cv-download {
+        display: none !important;
+    }
+
+    /* Show URLs in print for links the reader can act on */
+    a[href^="http"]:not(.profile)::after,
+    a[href^="mailto"]:not(.profile)::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #555 !important;
+        font-weight: normal;
+        word-break: break-all;
+    }
+    /* Don't double-print URL on internal links */
+    a[href^="/"]::after,
+    a[href$=".html"]:not([href^="http"])::after {
+        content: '' !important;
+    }
+
+    /* Work experience — keep tight, avoid orphans */
+    .work-exp-wrapper dl,
+    .work-exp-wrapper dt,
+    .work-exp-wrapper dd {
+        page-break-inside: avoid;
+    }
+    .work-exp-wrapper dt {
+        margin-top: 10pt !important;
+        margin-bottom: 4pt !important;
+    }
+    .work-exp-wrapper dt p {
+        margin-bottom: 1pt !important;
+    }
+    .work-exp-wrapper dd ul {
+        margin-top: 2pt !important;
+        padding-left: 16pt !important;
+    }
+    .work-exp-wrapper dd li {
+        margin-bottom: 2pt !important;
+        font-size: 10pt !important;
+    }
+
+    /* Page setup */
+    @page {
+        size: letter;
+        margin: 0.5in 0.6in;
+    }
+
+    /* On case study pages — keep images smaller in print */
+    .cs-image-full img,
+    img.case-card-large-image,
+    img.case-card-small-image {
+        max-width: 60% !important;
+        max-height: 3in !important;
+        page-break-inside: avoid;
+    }
+
+    /* Print URL footer at the bottom of the document */
+    body.michel-themed::after,
+    body.michel::after {
+        content: "webology.me · Tommy Williams · VP of Design";
+        display: block;
+        text-align: center;
+        font-size: 9pt;
+        color: #888 !important;
+        margin-top: 18pt;
+        padding-top: 8pt;
+        border-top: 1px solid #ccc;
+        font-family: Georgia, 'Times New Roman', serif !important;
+    }
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   PHASE 10 — A11y heading hierarchy fix
+   "Key Outcomes" was h3, creating an h1→h3 jump in every case study.
+   Promoted to h2 for proper hierarchy. This rule keeps the visual size
+   matching what it had as h3 (so layout doesn't change).
+   ════════════════════════════════════════════════════════════════════════ */
+body.michel-themed .exec-summary h2,
+.exec-summary h2 {
+    font-size: 20px !important;
+    line-height: 28px !important;
+    font-weight: 700 !important;
+    color: #111418 !important;
+    letter-spacing: -0.01em !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    text-transform: none !important;
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+}
+@media (min-width: 992px) {
+    body.michel-themed .exec-summary h2,
+    .exec-summary h2 {
+        font-size: 22px !important;
+        line-height: 30px !important;
+    }
+}
+
+/* Phase 10 follow-up — preserve visual size of work-card h2 (was h3) */
+body.michel-themed .work-card h2 {
+    font-size: 24px !important;
+    line-height: 32px !important;
+    font-weight: 700 !important;
+    color: #111418 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 12px !important;
+    text-transform: none !important;
+}
+body.michel-themed .work-card.featured h2 {
+    color: #FFFFFF !important;
+}
+@media (min-width: 992px) {
+    body.michel-themed .work-card h2 {
+        font-size: 26px !important;
+        line-height: 34px !important;
+    }
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   PHASE 11 — Recommendation avatar polish
+   Until real LinkedIn profile photos are dropped in, give each testimonial
+   a distinctive gradient avatar so the cards read as visually richer than
+   plain monograms on dark squares.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* Distinct gradient per recommendation card.
+   When user provides real LinkedIn photos, swap <img> tags into the
+   .profile-img-circle slot — img.profile-img-circle styles already exist
+   from Phase 7 and will take precedence. */
+.michel-page .recommendation .profile-img-circle,
+body.michel-themed .recommendation .profile-img-circle {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    font-size: 14px !important;
+    background-color: #6366f1 !important;
+}
+
+.michel-page .recommendation:nth-of-type(1) .profile-img-circle,
+body.michel-themed .recommendation:nth-of-type(1) .profile-img-circle {
+    background-image: linear-gradient(135deg, #6366f1, #a855f7) !important;
+}
+.michel-page .recommendation:nth-of-type(2) .profile-img-circle,
+body.michel-themed .recommendation:nth-of-type(2) .profile-img-circle {
+    background-image: linear-gradient(135deg, #ec4899, #f43f5e) !important;
+}
+.michel-page .recommendation:nth-of-type(3) .profile-img-circle,
+body.michel-themed .recommendation:nth-of-type(3) .profile-img-circle {
+    background-image: linear-gradient(135deg, #0ea5e9, #14b8a6) !important;
+}
+.michel-page .recommendation:nth-of-type(4) .profile-img-circle,
+body.michel-themed .recommendation:nth-of-type(4) .profile-img-circle {
+    background-image: linear-gradient(135deg, #f97316, #eab308) !important;
+}
+.michel-page .recommendation:nth-of-type(5) .profile-img-circle,
+body.michel-themed .recommendation:nth-of-type(5) .profile-img-circle {
+    background-image: linear-gradient(135deg, #10b981, #06b6d4) !important;
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   PHASE 12 — WCAG AA contrast fixes
+   #FF9900 fails contrast on white (2.14:1, needs 4.5:1 for normal text).
+   Darker #B85718 (5.34:1) passes AA Normal while staying in the same
+   warm orange family. Use:
+     #FF9900 → ICONS, decorative accents, gradients, borders
+     #B85718 → TEXT (links, eyebrow labels, meta tags, hover states)
+
+   Button hover (orange background): keep text dark, not white.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* Link text — darken from #FF9900 to #B85718 for AA compliance */
+body.michel-themed .page-content a {
+    color: #B85718 !important;
+}
+body.michel-themed .page-content a:hover {
+    border-bottom-color: #B85718 !important;
+    color: #B85718 !important;
+}
+
+/* Orange-colored heading eyebrows / labels */
+body.michel-themed .perspective-section .label,
+body.michel-themed .meta-label,
+body.michel-themed .exec-meta-item .meta-label,
+body.michel-themed .currently h2,
+body.michel-themed .teams-wrapper h2,
+body.michel-themed .brand-wrapper h2,
+body.michel-themed .work-exp-wrapper h2,
+body.michel-themed .work-meta,
+body.michel-themed .err-code,
+body.michel-themed .cs-gate-label,
+body.michel-themed .essay-meta {
+    color: #B85718 !important;
+}
+
+/* Featured work-card on dark bg — keep bright #FF9900 since contrast on dark
+   is 8:1 (passes AAA). The contrast issue is only on light bg. */
+body.michel-themed .work-card.featured .work-meta,
+body.michel-themed .work-card.featured a.work-link {
+    color: #FF9900 !important;
+}
+
+/* Eyebrow labels on dark surfaces (case-card-large, impact-summary) — keep bright */
+body.michel-themed .case-card-large-outer .cs-label,
+body.michel-themed .impact-summary h2,
+body.michel-themed .section-band.dark h2 {
+    color: #FF9900 !important;
+}
+
+/* Button hover with orange background: keep text dark — eliminates the
+   2.14:1 white-on-orange failure */
+body.michel-themed .btn-primary:hover,
+body.michel-themed form button[type="submit"]:hover,
+body.michel-themed .contact-wrapper .btn-primary:hover,
+body.michel-themed .cs-links a:hover,
+body.michel-themed .err-btn:hover,
+body.michel-themed .cv-download:hover,
+body.michel-themed a.work-link:hover {
+    color: #FFFFFF !important;
+    background: #111418 !important;
+    border-color: #111418 !important;
+}
+
+/* Workaround: home page (.michel — not .michel-themed) has its own a.a-larger
+   CTA arrow link with orange color from the .michel-page CSS. Override too. */
+.michel-page .a-larger,
+.michel-page a.a-larger {
+    color: #B85718;
+}
+.michel-page .a-larger:hover,
+.michel-page a.a-larger:hover {
+    border-bottom-color: #B85718;
+    color: #B85718;
+}
+.michel-page .case-card-large-outer .a-larger,
+.michel-page .case-card-large-outer a.a-larger {
+    color: #FF9900;  /* On dark card — bright is fine */
+}
+
+/* Worked-with eyebrow h6 stays muted (#5A5F66) which already passes */
